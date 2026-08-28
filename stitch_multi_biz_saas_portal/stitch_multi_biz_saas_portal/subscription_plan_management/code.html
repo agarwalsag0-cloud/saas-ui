@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscription Plan Management &amp; Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#404758",
+                      "surface-tint": "#4e44e2",
+                      "tertiary-fixed": "#e1e3e4",
+                      "background": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#5c6274",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "on-surface-variant": "#464555",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "tertiary-container": "#67696a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#575e70",
+                      "outline-variant": "#c7c4d8",
+                      "on-secondary-fixed": "#141b2b",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d9dff5",
+                      "inverse-surface": "#2a313d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-container": "#e8e9ea",
+                      "on-background": "#151c27",
+                      "surface-container": "#e7eefe",
+                      "on-primary-container": "#e9e5ff",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "tertiary": "#4e5152",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2dfff",
+                      "primary": "#3e32d3",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-dim": "#d3daea",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#dce2f7",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-fixed": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#777587",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-variant": "#dce2f3",
+                      "primary-container": "#5850ec",
+                      "on-primary-fixed-variant": "#3424ca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "max-width": "1440px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #F9FAFB;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-surface bg-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col w-[260px] h-full py-lg bg-on-secondary-fixed dark:bg-on-background text-primary-fixed-dim shadow-sm flex-shrink-0 z-20">
+<div class="px-md mb-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm">BP</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-surface">Business Portal</h1>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Manage Presence</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-sm overflow-y-auto">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">storefront</span>
+                Business Profile
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Products &amp; Services
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+                Enquiries
+            </a>
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined fill">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto px-md flex flex-col gap-sm">
+<button class="w-full bg-primary text-on-primary py-2 rounded-DEFAULT font-label-md hover:bg-primary-container transition-colors mb-4">Upgrade Plan</button>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help Center
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-xl h-16 w-full bg-surface dark:bg-surface-dim border-b border-outline-variant z-10 flex-shrink-0">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Admin Console</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant overflow-hidden ml-2 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A detailed professional headshot of a corporate administrator in a modern, well-lit office setting. The lighting is soft and neutral, conveying trust and competence. The color palette is subtle, featuring corporate blues and grays, adhering to a minimalist professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB38TxFTDjhdyXTIHWGDCwpuNer-lquXvn_ANmGXFJKLCQb2N_V3HeaBwFCC8g10AMcK70kb4NOqmWCXgHRUe7Dh52m7UL5WNMSfxK8BxTsy-Mk2h0gR6d-Ig9vMJGL8HM4ymoyaGUQbuDi6uZq3dFDTi3hnPAMdgDNYO4LHfw7b2FtgJ2rWHZh04aI1Z3dHApaD56cf_5ycV5oHJjd9jiOnbl62aTx_RYPw7s9feOoNWibIK35fRn_"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto p-lg md:p-xl flex flex-col gap-lg bg-surface relative z-0">
+<!-- Page Header -->
+<div class="flex justify-between items-end pb-sm border-b border-outline-variant">
+<div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-on-surface">Subscription Plans</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Manage existing tiers and configure new subscription offerings.</p>
+</div>
+<button class="bg-primary text-on-primary px-lg py-md rounded-DEFAULT font-label-md flex items-center gap-sm hover:opacity-90 transition-opacity" id="openBuilderBtn">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Create New Plan
+                </button>
+</div>
+<!-- Content Grid (Plans Table + Summary) -->
+<div class="flex flex-col xl:flex-row gap-lg items-start">
+<!-- Existing Plans Table Card -->
+<div class="flex-1 w-full bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0px_1px_3px_rgba(0,0,0,0.1),_0px_1px_2px_rgba(0,0,0,0.06)] overflow-hidden">
+<div class="p-md border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<h3 class="font-title-lg text-on-surface">Active Plans</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64" placeholder="Search plans..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant text-label-sm text-on-surface-variant uppercase tracking-wider">
+<th class="p-md font-semibold">Plan Name</th>
+<th class="p-md font-semibold">Pricing</th>
+<th class="p-md font-semibold">Billing Cycle</th>
+<th class="p-md font-semibold">Active Businesses</th>
+<th class="p-md font-semibold">Status</th>
+<th class="p-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-md divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="p-md font-title-md text-on-surface">Basic Starter</td>
+<td class="p-md text-on-surface-variant">$29<span class="text-body-sm text-outline">/mo</span></td>
+<td class="p-md text-on-surface-variant">Monthly</td>
+<td class="p-md text-on-surface-variant">1,245</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-container/10 text-primary font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-outline hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="p-md font-title-md text-on-surface">Professional Growth</td>
+<td class="p-md text-on-surface-variant">$99<span class="text-body-sm text-outline">/mo</span></td>
+<td class="p-md text-on-surface-variant">Monthly</td>
+<td class="p-md text-on-surface-variant">856</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-container/10 text-primary font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-outline hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="p-md font-title-md text-on-surface">Enterprise Scale</td>
+<td class="p-md text-on-surface-variant">$299<span class="text-body-sm text-outline">/mo</span></td>
+<td class="p-md text-on-surface-variant">Annual</td>
+<td class="p-md text-on-surface-variant">112</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-container/10 text-primary font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-outline hover:text-error transition-colors p-1"><span class="material-symbols-outlined">delete</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/50 transition-colors group opacity-60">
+<td class="p-md font-title-md text-on-surface">Legacy Lite</td>
+<td class="p-md text-on-surface-variant">$15<span class="text-body-sm text-outline">/mo</span></td>
+<td class="p-md text-on-surface-variant">Monthly</td>
+<td class="p-md text-on-surface-variant">45</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-variant text-on-surface-variant font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                            Archived
+                                        </span>
+</td>
+<td class="p-md text-right">
+<button class="text-outline hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-md border-t border-outline-variant bg-surface flex justify-between items-center text-body-sm text-on-surface-variant">
+<span>Showing 1 to 4 of 12 plans</span>
+<div class="flex gap-1">
+<button class="px-2 py-1 border border-outline-variant rounded hover:bg-surface-variant disabled:opacity-50" disabled="">Prev</button>
+<button class="px-2 py-1 border border-outline-variant rounded bg-primary-container/10 text-primary font-medium">1</button>
+<button class="px-2 py-1 border border-outline-variant rounded hover:bg-surface-variant">2</button>
+<button class="px-2 py-1 border border-outline-variant rounded hover:bg-surface-variant">3</button>
+<button class="px-2 py-1 border border-outline-variant rounded hover:bg-surface-variant">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Plan Builder Modal (Hidden by default, shown via JS for demonstration) -->
+<div class="fixed inset-0 z-50 bg-on-background/50 backdrop-blur-sm flex items-center justify-center p-md md:p-xl hidden" id="planBuilderModal">
+<div class="bg-surface-container-lowest w-full max-w-4xl max-h-[90vh] rounded-xl shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),_0px_4px_6px_-2px_rgba(0,0,0,0.05)] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-lg border-b border-outline-variant flex justify-between items-center bg-surface shrink-0">
+<div>
+<h2 class="font-headline-sm text-on-surface">Build Subscription Plan</h2>
+<p class="font-body-sm text-on-surface-variant mt-1">Configure pricing and feature tiers for a new offering.</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant p-2 rounded-full transition-colors" id="closeBuilderBtn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Two Columns: Form & Live Preview) -->
+<div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+<!-- Configuration Form -->
+<div class="flex-1 p-lg overflow-y-auto border-r border-outline-variant bg-surface">
+<form class="space-y-xl">
+<!-- Basic Details -->
+<section>
+<h3 class="font-title-md text-on-surface mb-md pb-xs border-b border-outline-variant">Basic Details</h3>
+<div class="space-y-md">
+<div>
+<label class="block font-label-md text-on-surface mb-xs">Plan Name</label>
+<input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Premium Plus" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs">Marketing Description</label>
+<textarea class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Short description for the pricing page..." rows="2"></textarea>
+</div>
+</div>
+</section>
+<!-- Pricing Structure -->
+<section>
+<h3 class="font-title-md text-on-surface mb-md pb-xs border-b border-outline-variant">Pricing Structure</h3>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-on-surface mb-xs">Monthly Price (USD)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant font-medium">$</span>
+<input class="w-full pl-8 pr-3 py-2 bg-surface border border-outline-variant rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-xs">Yearly Price (USD)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant font-medium">$</span>
+<input class="w-full pl-8 pr-3 py-2 bg-surface border border-outline-variant rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" id="trialToggle" type="checkbox"/>
+<label class="font-body-md text-on-surface cursor-pointer" for="trialToggle">Enable 14-day free trial</label>
+</div>
+</section>
+<!-- Feature Selection -->
+<section>
+<h3 class="font-title-md text-on-surface mb-md pb-xs border-b border-outline-variant">Included Features</h3>
+<div class="space-y-sm">
+<!-- Feature Item 1 -->
+<div class="flex items-start gap-3 p-3 border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-primary/50 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" id="feat1" type="checkbox"/>
+<div class="flex-1">
+<label class="font-label-md text-on-surface cursor-pointer block" for="feat1">Public Business Profile</label>
+<p class="text-body-sm text-on-surface-variant">Allow business to have a public directory listing.</p>
+</div>
+</div>
+<!-- Feature Item 2 (with limit) -->
+<div class="flex items-start gap-3 p-3 border border-primary rounded-lg bg-primary-container/5 shadow-[0_0_0_1px_rgba(62,50,211,0.1)] transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" id="feat2" type="checkbox"/>
+<div class="flex-1">
+<label class="font-label-md text-on-surface cursor-pointer block" for="feat2">Product Listings</label>
+<div class="mt-2 flex items-center gap-2">
+<span class="text-body-sm text-on-surface-variant">Limit:</span>
+<input class="w-20 px-2 py-1 text-body-sm border border-outline-variant rounded focus:border-primary outline-none" type="number" value="50"/>
+<span class="text-body-sm text-on-surface-variant">items</span>
+</div>
+</div>
+</div>
+<!-- Feature Item 3 -->
+<div class="flex items-start gap-3 p-3 border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-primary/50 transition-colors">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" id="feat3" type="checkbox"/>
+<div class="flex-1">
+<label class="font-label-md text-on-surface cursor-pointer block" for="feat3">Advanced Analytics</label>
+<p class="text-body-sm text-on-surface-variant">Access to traffic and conversion reports.</p>
+</div>
+</div>
+<!-- Feature Item 4 -->
+<div class="flex items-start gap-3 p-3 border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-primary/50 transition-colors">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" id="feat4" type="checkbox"/>
+<div class="flex-1">
+<label class="font-label-md text-on-surface cursor-pointer block" for="feat4">Custom Domain</label>
+<p class="text-body-sm text-on-surface-variant">Connect a custom domain to the business profile.</p>
+</div>
+</div>
+</div>
+</section>
+</form>
+</div>
+<!-- Live Preview Panel -->
+<div class="w-full md:w-80 bg-surface-container-low p-lg flex flex-col shrink-0 overflow-y-auto">
+<h3 class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-md">Live Preview</h3>
+<!-- Pricing Card Mockup -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm flex flex-col h-full relative overflow-hidden">
+<!-- Decorative top accent -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div class="mt-2">
+<h4 class="font-title-lg text-on-surface">Premium Plus</h4>
+<p class="font-body-sm text-on-surface-variant mt-1 h-10 overflow-hidden">Short description for the pricing page...</p>
+</div>
+<div class="my-md py-md border-y border-outline-variant">
+<div class="flex items-end gap-1">
+<span class="font-display-lg text-on-surface tracking-tight">$99</span>
+<span class="font-body-md text-on-surface-variant mb-2">/mo</span>
+</div>
+<p class="font-body-sm text-primary mt-1">14-day free trial included</p>
+</div>
+<div class="flex-1">
+<ul class="space-y-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+                                    Public Business Profile
+                                </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+                                    Up to 50 Product Listings
+                                </li>
+<!-- Dimmed unselected features for preview -->
+<li class="flex items-center gap-2 text-outline-variant opacity-50">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                                    Advanced Analytics
+                                </li>
+<li class="flex items-center gap-2 text-outline-variant opacity-50">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                                    Custom Domain
+                                </li>
+</ul>
+</div>
+<button class="w-full mt-lg py-2 bg-primary text-on-primary font-label-md rounded-DEFAULT">Subscribe Now</button>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-md border-t border-outline-variant bg-surface-container-lowest flex justify-end gap-md shrink-0">
+<button class="px-md py-2 border border-outline-variant text-on-surface font-label-md rounded-DEFAULT hover:bg-surface-variant transition-colors" id="cancelBuilderBtn">Cancel</button>
+<button class="px-md py-2 bg-primary text-on-primary font-label-md rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                    Publish Plan
+                </button>
+</div>
+</div>
+</div>
+<!-- Simple JS to toggle modal for demonstration -->
+<script>
+        const modal = document.getElementById('planBuilderModal');
+        const openBtn = document.getElementById('openBuilderBtn');
+        const closeBtn = document.getElementById('closeBuilderBtn');
+        const cancelBtn = document.getElementById('cancelBuilderBtn');
+
+        const toggleModal = () => {
+            modal.classList.toggle('hidden');
+        };
+
+        openBtn.addEventListener('click', toggleModal);
+        closeBtn.addEventListener('click', toggleModal);
+        cancelBtn.addEventListener('click', toggleModal);
+        
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) toggleModal();
+        });
+    </script>
+</body></html>

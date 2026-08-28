@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Portal Login - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#404758",
+                      "surface-tint": "#4e44e2",
+                      "tertiary-fixed": "#e1e3e4",
+                      "background": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#5c6274",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "on-surface-variant": "#464555",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "tertiary-container": "#67696a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#575e70",
+                      "outline-variant": "#c7c4d8",
+                      "on-secondary-fixed": "#141b2b",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d9dff5",
+                      "inverse-surface": "#2a313d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-container": "#e8e9ea",
+                      "on-background": "#151c27",
+                      "surface-container": "#e7eefe",
+                      "on-primary-container": "#e9e5ff",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "tertiary": "#4e5152",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2dfff",
+                      "primary": "#3e32d3",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-dim": "#d3daea",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#dce2f7",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-fixed": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#777587",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-variant": "#dce2f3",
+                      "primary-container": "#5850ec",
+                      "on-primary-fixed-variant": "#3424ca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "max-width": "1440px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "title-md": ["Inter"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .custom-shadow-soft {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 1px 2px rgba(0,0,0,0.06);
+        }
+        .input-focus-ring:focus-within {
+            border-color: #3e32d3;
+            box-shadow: 0 0 0 3px rgba(62, 50, 211, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface min-h-screen flex items-center justify-center p-lg font-body-md text-on-surface">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl custom-shadow-soft border border-outline-variant p-2xl">
+<!-- Header -->
+<div class="text-center mb-xl">
+<h1 class="font-headline-sm text-headline-sm text-primary mb-sm">SaaSFlow</h1>
+<h2 class="font-title-lg text-title-lg mb-xs">Business Portal Login</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Secure access for business owners and administrators.</p>
+</div>
+<!-- Login Form -->
+<form class="space-y-lg">
+<!-- Email Input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email Address</label>
+<div class="relative input-focus-ring border border-outline-variant rounded bg-surface-container-lowest transition-all duration-200">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full bg-transparent border-none py-sm pl-[40px] pr-sm font-body-md text-body-md focus:ring-0" id="email" name="email" placeholder="admin@business.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div>
+<div class="flex justify-between items-center mb-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative input-focus-ring border border-outline-variant rounded bg-surface-container-lowest transition-all duration-200">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full bg-transparent border-none py-sm pl-[40px] pr-[40px] font-body-md text-body-md focus:ring-0" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="w-5 h-5 rounded-[4px] border-outline-variant text-primary focus:ring-primary focus:ring-2 focus:ring-offset-2" id="remember" name="remember" type="checkbox"/>
+<label class="ml-sm font-body-sm text-body-sm text-on-surface-variant" for="remember">Remember me for 30 days</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded hover:bg-primary-container transition-colors duration-200 flex justify-center items-center gap-xs" type="submit">
+                Login to Portal
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Links -->
+<div class="mt-xl pt-lg border-t border-outline-variant text-center space-y-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                New to SaaSFlow? 
+                <a class="font-label-sm text-label-sm text-primary hover:underline ml-xs" href="#">Register Business</a>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Looking for personal account? 
+                <a class="font-label-sm text-label-sm text-secondary hover:underline ml-xs" href="#">Customer Login</a>
+</p>
+</div>
+</div>
+</body></html>

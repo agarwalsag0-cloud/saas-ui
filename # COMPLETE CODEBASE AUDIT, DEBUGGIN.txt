@@ -1,0 +1,871 @@
+# COMPLETE CODEBASE AUDIT, DEBUGGING & FIX PROMPT
+
+The Multi-Business Platform has now been implemented in this repository.
+
+The application is large and was generated/implemented in one major build, so there may be broken functionality, inconsistent code, missing connections, backend errors, database issues, security problems, UI bugs, dead links, incomplete logic, or integration problems.
+
+Your task now is to perform a **COMPLETE END-TO-END CODEBASE AUDIT AND FIX ALL IDENTIFIABLE ISSUES**.
+
+Do not assume that the existing implementation is correct just because the application was generated successfully.
+
+Do not only fix the first visible error.
+
+You must inspect the **entire project, all files, all code paths, all integrations and all major workflows**.
+
+---
+
+# 1. FULL REPOSITORY REVIEW
+
+First inspect the complete repository.
+
+Review:
+
+* All PHP files
+* HTML
+* CSS
+* JavaScript
+* SQL/database-related code
+* Configuration
+* Authentication
+* Sessions
+* Routing/navigation
+* Forms
+* API/AJAX requests
+* File uploads
+* Assets
+* Dependencies
+* Reusable components
+* Admin functionality
+* Business functionality
+* Customer functionality
+* Public website functionality
+
+Do not skip files just because they appear unrelated.
+
+Identify duplicated, obsolete, conflicting, unreachable or unused code.
+
+---
+
+# 2. DO NOT REDESIGN THE APPLICATION
+
+The existing UI/UX has already been designed.
+
+Do NOT replace the interface with a generic template.
+
+Preserve:
+
+* Layout
+* Sidebar
+* Header
+* Typography
+* Colors
+* Cards
+* Tables
+* Forms
+* Buttons
+* Navigation
+* Responsive design
+* Visual hierarchy
+
+Only modify UI when necessary to fix:
+
+* Broken layout
+* Missing functionality
+* Responsiveness
+* Accessibility
+* Inconsistent states
+* Broken interactions
+* Incorrect information
+
+The goal is:
+
+**Fix the existing application, not redesign it.**
+
+---
+
+# 3. FIND ALL BROKEN LINKS AND NAVIGATION
+
+Audit every:
+
+* Sidebar item
+* Header link
+* Button
+* CTA
+* Breadcrumb
+* Form action
+* Internal URL
+* Public business URL
+* Preview link
+* Back button
+* Logout
+* Login redirect
+* Pagination
+* Filter
+* Search action
+
+Verify that every destination actually exists and works.
+
+Find:
+
+* 404 routes
+* Wrong URLs
+* Incorrect parameters
+* Missing query parameters
+* Broken redirects
+* Redirect loops
+* Dead buttons
+* Buttons that do nothing
+* Links pointing to obsolete pages
+
+Fix them.
+
+---
+
+# 4. REVIEW ALL PHP CODE
+
+Inspect PHP for:
+
+* Syntax errors
+* Undefined variables
+* Undefined functions
+* Incorrect includes
+* Incorrect requires
+* Wrong paths
+* Incorrect redirects
+* Missing session checks
+* Incorrect conditions
+* Logic errors
+* Incorrect database queries
+* Missing error handling
+* Incorrect form processing
+* Broken CRUD
+* Incorrect permissions
+
+Check for warnings and fatal errors.
+
+Do not hide errors blindly.
+
+Fix the underlying cause.
+
+---
+
+# 5. DATABASE / MYSQL AUDIT
+
+Review the complete database interaction.
+
+Check:
+
+* Database connection
+* Queries
+* Prepared statements
+* Table relationships
+* Foreign keys
+* Primary keys
+* Unique constraints
+* Required fields
+* NULL handling
+* Data types
+* Indexes
+* Insert operations
+* Update operations
+* Delete/archive operations
+* Select queries
+* Joins
+* Transactions where appropriate
+
+Identify:
+
+* Queries referencing nonexistent columns
+* Queries referencing nonexistent tables
+* Incorrect column names
+* Missing relationships
+* Wrong joins
+* Duplicate data problems
+* Invalid assumptions about database structure
+
+Fix all code/database mismatches.
+
+Do not create unnecessary duplicate databases.
+
+---
+
+# 6. MULTI-TENANT SECURITY AUDIT
+
+This is CRITICAL.
+
+Test the platform as multiple businesses.
+
+Business A must NEVER be able to access Business B's:
+
+* Products
+* Services
+* Categories
+* Offers
+* Enquiries
+* Orders
+* Website settings
+* Uploaded files
+* Customers/private information
+* Subscription data
+* Other private business data
+
+Do not rely on hidden UI elements.
+
+Test direct URL manipulation.
+
+For example, if a URL or request contains an ID belonging to another business, the backend must reject it.
+
+Check every relevant SELECT, INSERT, UPDATE and DELETE operation.
+
+Fix every tenant-isolation vulnerability found.
+
+---
+
+# 7. AUTHENTICATION AUDIT
+
+Test:
+
+### Super Admin
+
+* Login
+* Logout
+* Session
+* First-time setup
+* Protected pages
+
+### Business
+
+* Login
+* Logout
+* Session
+* Business association
+* Protected pages
+
+### Customer
+
+* Login
+* Logout
+* Session
+* Customer account
+* Protected pages
+
+Check:
+
+* Password hashing
+* Session handling
+* Session regeneration
+* Authentication redirects
+* Unauthorized access
+* Session expiry
+* Direct URL access
+
+A user must never gain access simply by manually changing a URL.
+
+---
+
+# 8. AUTHORIZATION / ROLE AUDIT
+
+Verify:
+
+### Public Visitor
+
+Can only access public functionality.
+
+### Customer
+
+Can only access customer functionality and their own private data.
+
+### Business User
+
+Can only access their authorized business.
+
+### Super Admin
+
+Has platform-level access.
+
+Test role escalation.
+
+Test direct access to URLs belonging to another role.
+
+Fix every authorization bypass.
+
+---
+
+# 9. SUBSCRIPTION SYSTEM AUDIT
+
+Review the entire:
+
+**Plan → Feature → Business Access**
+
+system.
+
+Verify:
+
+* Plans work
+* Monthly/yearly pricing works
+* Subscription status works
+* Expiration works
+* Feature assignment works
+* Feature restrictions work
+* Locked UI works
+* Backend feature gating works
+
+IMPORTANT:
+
+Hiding a sidebar item is NOT feature protection.
+
+Direct URL access must also be blocked.
+
+A business without the Website feature must not be able to access Website management through manually entering the URL.
+
+Test multiple plans with different feature combinations.
+
+---
+
+# 10. BUSINESS APPROVAL WORKFLOW
+
+Test the complete lifecycle:
+
+Registration
+→ Setup
+→ Submit for Review
+→ Under Review
+→ Approved
+OR
+→ Rejected
+OR
+→ Changes Requested
+
+Verify:
+
+* Status changes
+* Permissions
+* Notifications
+* Public visibility
+* Website availability
+* Directory visibility
+
+A business registration must NOT automatically become an approved public listing.
+
+---
+
+# 11. PUBLIC BUSINESS WEBSITE AUDIT
+
+Check:
+
+* Business website URL
+* Business-specific content
+* Business branding
+* Theme
+* Colors
+* Logo
+* Categories
+* Products/services
+* Offers
+* Contact information
+* Preview
+* Publishing
+* Unpublishing
+
+Ensure Business A's public website never displays Business B's content.
+
+---
+
+# 12. WEBSITE ACCESS RULES
+
+Verify that public website access correctly depends on:
+
+1. Business status
+2. Subscription
+3. Website feature
+4. Website publishing state
+5. Public visibility
+
+Keep these states separate.
+
+A default website configuration must NOT accidentally create public access when the Website feature is unavailable.
+
+Preview mode must not accidentally become a public/indexable page.
+
+---
+
+# 13. DIRECTORY AUDIT
+
+Check the public business directory.
+
+Verify that only eligible businesses appear.
+
+Check:
+
+* Search
+* Filters
+* Categories
+* Pagination
+* Business cards
+* Business links
+* Public website links
+
+Pending/rejected/suspended/unpublished businesses must not accidentally appear as active public listings.
+
+---
+
+# 14. CUSTOMER AUDIT
+
+Test:
+
+* Customer authentication
+* Customer profile
+* Business discovery
+* Business website viewing
+* Product/service viewing
+* Enquiry submission
+* Orders/requests
+* Notifications
+* Customer history
+
+Verify customers can only access their own private records.
+
+Customer approval must NOT be required.
+
+---
+
+# 15. ENQUIRY AUDIT
+
+Test:
+
+Customer
+→ Business Website
+→ Enquiry
+→ Correct Business Portal
+
+The enquiry must belong to the correct business.
+
+Business A must never see Business B's enquiries.
+
+Test:
+
+* Create
+* View
+* Status change
+* Filtering
+* Search
+* Details
+* Customer information
+
+---
+
+# 16. CRUD AUDIT
+
+Test every CRUD operation in the system:
+
+### Create
+
+Does it save correctly?
+
+### Read
+
+Does it display the correct data?
+
+### Update
+
+Does it update only the intended record?
+
+### Delete/Archive
+
+Does it remove/archive correctly?
+
+Check:
+
+* Products
+* Services
+* Categories
+* Offers
+* Businesses
+* Plans
+* Features
+* Enquiries
+* Orders/requests
+* Website settings
+* Notifications
+
+Fix every broken operation.
+
+---
+
+# 17. FORM AUDIT
+
+Inspect every form.
+
+Check:
+
+* Required fields
+* Validation
+* Server-side validation
+* Client-side validation where useful
+* Error messages
+* Success messages
+* Database persistence
+* Duplicate prevention
+* Invalid input
+* Empty input
+* Long input
+* Special characters
+
+No form should appear to succeed if the database operation failed.
+
+---
+
+# 18. FILE UPLOAD AUDIT
+
+Inspect all image/file upload functionality.
+
+Check:
+
+* MIME validation
+* Extension validation
+* File size
+* Filename handling
+* Storage paths
+* Duplicate filenames
+* Invalid files
+* Executable file upload prevention
+* Authorization
+* Business ownership
+
+A business must not be able to access another business's private uploads.
+
+---
+
+# 19. JAVASCRIPT AUDIT
+
+Inspect all JavaScript.
+
+Check for:
+
+* Console errors
+* Undefined functions
+* Missing selectors
+* Event listeners not firing
+* AJAX failures
+* Incorrect fetch requests
+* Broken modals
+* Broken dropdowns
+* Broken filters
+* Broken search
+* Broken validation
+* Race conditions
+* Incorrect response handling
+
+Fix all identifiable issues.
+
+---
+
+# 20. CSS / RESPONSIVE AUDIT
+
+Check the entire UI on:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+
+Find:
+
+* Overflow
+* Horizontal scrolling
+* Broken grids
+* Overlapping elements
+* Excessive whitespace
+* Text clipping
+* Broken tables
+* Broken modals
+* Sidebar problems
+* Mobile navigation problems
+* Buttons going outside containers
+
+Fix responsive problems while preserving the existing design.
+
+---
+
+# 21. SEO AUDIT
+
+For eligible public business websites verify:
+
+* Page title
+* Meta description
+* Canonical URL
+* Heading hierarchy
+* Image alt text
+* SEO-friendly URL
+* Sitemap
+* Indexing state
+
+Verify that private/unapproved/unpublished pages are not intentionally indexable.
+
+Do not claim guaranteed Google indexing or ranking.
+
+---
+
+# 22. SECURITY AUDIT
+
+Perform a security review for:
+
+* SQL injection
+* XSS
+* CSRF
+* Session fixation
+* Authentication bypass
+* Authorization bypass
+* IDOR
+* File upload vulnerabilities
+* Sensitive data exposure
+* Credential exposure
+* Unsafe redirects
+* Direct file access
+* Information leakage
+
+Use secure coding practices.
+
+Do not merely suppress warnings.
+
+Fix vulnerabilities at their source.
+
+---
+
+# 23. ERROR HANDLING
+
+Replace raw technical errors with safe user-friendly messages where appropriate.
+
+Users should NOT see:
+
+* SQL errors
+* Database credentials
+* File paths
+* Stack traces
+* Internal configuration
+* Sensitive debugging information
+
+But developers should still have a useful logging/debugging mechanism during development.
+
+---
+
+# 24. PERFORMANCE REVIEW
+
+Identify obvious performance problems:
+
+* Repeated database queries
+* Unnecessary queries
+* Missing indexes
+* Huge assets
+* Duplicate requests
+* Inefficient loops
+* Unnecessary page loads
+* Excessive JavaScript
+
+Fix reasonable performance issues without over-engineering.
+
+---
+
+# 25. CLEANUP
+
+After fixing functionality:
+
+Remove or correct:
+
+* Dead code
+* Duplicate functions
+* Duplicate logic
+* Unused imports
+* Obsolete routes
+* Temporary debug output
+* console.log statements that should not remain
+* Hard-coded test data
+* Fake success responses
+* Placeholder functionality
+
+Do NOT remove anything if you are not sure whether it is required.
+
+---
+
+# 26. DO NOT BREAK WORKING FEATURES
+
+Before changing a component used in multiple places:
+
+Check where it is used.
+
+Avoid fixing one page by breaking another.
+
+After major changes, retest dependent pages.
+
+---
+
+# 27. END-TO-END TESTING
+
+After fixing the code, test the complete application flow:
+
+### PUBLIC
+
+Visitor
+→ Directory
+→ Business
+→ Business Website
+→ Product/Service
+→ Enquiry
+
+### CUSTOMER
+
+Google Login
+→ Customer Portal
+→ Browse Businesses
+→ Submit Enquiry
+→ View Enquiry
+
+### BUSINESS
+
+Business Login
+→ Dashboard
+→ Profile
+→ Products/Services
+→ Website
+→ Preview
+→ Subscription
+→ Enquiries
+
+### SUPER ADMIN
+
+Login
+→ Dashboard
+→ Businesses
+→ Review
+→ Approve
+→ Subscription
+→ Plans
+→ Features
+→ Notifications
+
+### WEBSITE
+
+Business Setup
+→ Preview
+→ Submit for Review
+→ Approval
+→ Publish
+→ Public Website
+→ Directory
+→ SEO eligibility
+
+---
+
+# 28. TEST MULTIPLE BUSINESS ACCOUNTS
+
+Create/use at least two test businesses.
+
+Example:
+
+Business A
+Business B
+
+Verify complete isolation.
+
+Test:
+
+* Business A dashboard
+* Business A products
+* Business A enquiries
+* Business A website
+
+Then attempt to access Business B data from Business A's session.
+
+This must fail.
+
+Repeat in reverse.
+
+---
+
+# 29. FINAL DIAGNOSTIC REPORT
+
+After completing the audit and fixes, provide a detailed report.
+
+Do NOT simply say:
+
+"Everything is fixed."
+
+Report:
+
+### FIXED
+
+List actual issues fixed.
+
+### REMAINING
+
+List anything that could not be fixed.
+
+### SECURITY
+
+List security issues found and resolved.
+
+### DATABASE
+
+List database issues found and resolved.
+
+### FRONTEND
+
+List UI/navigation issues fixed.
+
+### BACKEND
+
+List PHP/backend issues fixed.
+
+### SUBSCRIPTION
+
+List subscription/feature-gating issues fixed.
+
+### MULTI-TENANT
+
+Report tenant-isolation testing results.
+
+### WEBSITE
+
+Report public website/preview/publishing testing results.
+
+### SEO
+
+Report SEO/indexing implementation status.
+
+### EXTERNAL SERVICES
+
+Clearly identify anything requiring external credentials/configuration, such as Google OAuth or future payment gateways.
+
+### CONFIGURATION
+
+List exactly what must still be configured manually.
+
+### XAMPP
+
+Provide exact steps to run and test the final project locally.
+
+---
+
+# 30. FINAL RULE
+
+You have permission to modify the repository to fix genuine issues.
+
+However:
+
+**Do not rewrite the entire application unnecessarily.**
+
+**Do not redesign the UI.**
+
+**Do not remove working functionality.**
+
+**Do not create fake functionality.**
+
+**Do not hide errors instead of fixing them.**
+
+**Do not claim success without testing.**
+
+Review the complete codebase, identify the actual problems, fix them, and then verify the fixes.
+
+The objective is not merely to make the application "look working."
+
+The objective is to make the existing Multi-Business Platform **actually functional, secure, consistent, connected and reliable end-to-end.**

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Enquiries &amp; Orders - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#404758",
+                      "surface-tint": "#4e44e2",
+                      "tertiary-fixed": "#e1e3e4",
+                      "background": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#5c6274",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "on-surface-variant": "#464555",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "tertiary-container": "#67696a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#575e70",
+                      "outline-variant": "#c7c4d8",
+                      "on-secondary-fixed": "#141b2b",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d9dff5",
+                      "inverse-surface": "#2a313d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-container": "#e8e9ea",
+                      "on-background": "#151c27",
+                      "surface-container": "#e7eefe",
+                      "on-primary-container": "#e9e5ff",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "tertiary": "#4e5152",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2dfff",
+                      "primary": "#3e32d3",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-dim": "#d3daea",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#dce2f7",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-fixed": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#777587",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-variant": "#dce2f3",
+                      "primary-container": "#5850ec",
+                      "on-primary-fixed-variant": "#3424ca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "max-width": "1440px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- Mobile Nav Header -->
+<header class="md:hidden flex justify-between items-center px-lg h-16 w-full border-b border-outline-variant bg-surface">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">SaaSFlow</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col w-[260px] h-full py-lg bg-on-secondary-fixed text-primary-fixed-dim shadow-sm flex-shrink-0 relative z-20">
+<div class="px-lg mb-xl">
+<div class="font-headline-sm text-headline-sm text-surface font-bold mb-md">SaaSFlow</div>
+<div class="flex items-center gap-md">
+<img alt="Business Logo" class="w-10 h-10 rounded-full object-cover bg-surface-container-high" data-alt="A small, professional avatar or logo placeholder with a clean, light-mode background and high contrast elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-NrKATW8vZKO0Ur4887USuwlGm4x1fJ4QrhUuWI3pFa71V24V2yi53i6eqLoJjkDK1ck9sLOiCrnMfTRAfbH36ikvQF9eBjXC1ECvKvcb0ljYxBx6hEwq0Nhr8Atnql_DGtzfR_pEiAKBlk6b03_nrSlDFUkUozG9IjNqRdftzzpMdCPSF0ITT6uJMy6eE_Bsiq7JbHr7zGtQvTRVRsY-8n4mtLjq7miD3nisG6raKK2tW8QvxgN7"/>
+<div>
+<div class="font-title-md text-title-md text-surface">Business Portal</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim">Manage Presence</div>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-lg py-md hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-lg py-md hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-md text-label-md">Business Profile</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-lg py-md hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Products &amp; Services</span>
+</a>
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-md text-label-md">Enquiries</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-lg py-md hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="px-lg mt-auto">
+<button class="w-full bg-primary text-on-primary py-2 rounded-md font-label-md text-label-md mb-lg hover:bg-primary-container transition-colors">Upgrade Plan</button>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md py-sm hover:text-surface transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md py-sm hover:text-surface transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background">
+<!-- TopAppBar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-xl h-16 w-full border-b border-outline-variant bg-surface flex-shrink-0 z-10">
+<div class="flex-1 flex items-center">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-md font-body-md text-body-md bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full ml-sm border border-outline-variant object-cover" data-alt="A professional headshot of a system administrator, clean lighting, light mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWZ2-V7gMvDcsYMA6gYx4gi6KSxaKvY37WPVFuNleCslY7ZlkX2pq8ze0dF4cXyWsN1nSD_A2nK84aJ6E9uDUNj9KtwWVxRUhwm5GnUpKVF7VNNs7gZz9v-xIAQKN_iP2oczuinuMdqsYDhTdJjyn82Oj-Gpz9EM-VR2Lu0TMeoay1YllVUyUOWeKi8f7y_oDpkTwzwyARP35UyPJaHOmfYOJ4TU2c1F0dZQ35466xaKB4iclQ9064"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 overflow-y-auto p-lg md:p-2xl">
+<div class="max-w-[1000px] mx-auto">
+<!-- Header & Tabs -->
+<div class="mb-xl">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">My Interactions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your enquiries and track your orders in one place.</p>
+</div>
+<div class="border-b border-outline-variant mb-lg flex gap-lg">
+<button class="pb-2 font-label-md text-label-md text-primary border-b-2 border-primary" id="tab-enquiries" onclick="switchTab('enquiries')">Enquiries</button>
+<button class="pb-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" id="tab-orders" onclick="switchTab('orders')">Orders</button>
+</div>
+<!-- Enquiries View -->
+<div class="space-y-md" id="view-enquiries">
+<!-- Populated State (Hidden by default in this example to show empty state, but structure provided) -->
+<div class="hidden bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_1px_3px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06)] flex items-center justify-between hover:border-primary transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-md bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">domain</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Acme Corp Consulting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sent: Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="inline-flex items-center px-2 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> Pending Reply
+                            </span>
+<button class="font-label-md text-label-md text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-xs">
+                                View <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Empty State -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-2xl text-center flex flex-col items-center justify-center shadow-[0px_1px_3px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06)] min-h-[400px]">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-lg relative">
+<span class="material-symbols-outlined text-[40px] text-primary">inbox</span>
+<div class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-outline">search</span>
+</div>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm">No Enquiries Yet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-lg">You haven't sent any enquiries to businesses yet. Start exploring the directory to find services that match your needs.</p>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-md font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">Explore Businesses</button>
+</div>
+</div>
+<!-- Orders View (Hidden initially) -->
+<div class="hidden space-y-md" id="view-orders">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_1px_3px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06)] flex items-center justify-between hover:border-outline transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-md bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Order #ORD-8472-A</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Placed: Oct 20, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="inline-flex items-center px-2 py-1 rounded-full font-label-sm text-label-sm bg-[#e8f5e9] text-[#1b5e20]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#4caf50] mr-2"></span> Completed
+                            </span>
+<button class="font-label-md text-label-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_1px_3px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06)] flex items-center justify-between hover:border-outline transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-md bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Order #ORD-9102-B</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Placed: Oct 22, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<span class="inline-flex items-center px-2 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> Processing
+                            </span>
+<button class="font-label-md text-label-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function switchTab(tabId) {
+            const enquiriesBtn = document.getElementById('tab-enquiries');
+            const ordersBtn = document.getElementById('tab-orders');
+            const enquiriesView = document.getElementById('view-enquiries');
+            const ordersView = document.getElementById('view-orders');
+
+            if (tabId === 'enquiries') {
+                enquiriesBtn.classList.add('text-primary', 'border-primary', 'border-b-2');
+                enquiriesBtn.classList.remove('text-on-surface-variant');
+                ordersBtn.classList.remove('text-primary', 'border-primary', 'border-b-2');
+                ordersBtn.classList.add('text-on-surface-variant');
+                
+                enquiriesView.classList.remove('hidden');
+                ordersView.classList.add('hidden');
+            } else {
+                ordersBtn.classList.add('text-primary', 'border-primary', 'border-b-2');
+                ordersBtn.classList.remove('text-on-surface-variant');
+                enquiriesBtn.classList.remove('text-primary', 'border-primary', 'border-b-2');
+                enquiriesBtn.classList.add('text-on-surface-variant');
+                
+                ordersView.classList.remove('hidden');
+                enquiriesView.classList.add('hidden');
+            }
+        }
+    </script>
+</body></html>

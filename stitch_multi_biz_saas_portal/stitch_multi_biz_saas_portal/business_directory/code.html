@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Directory - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .font-headline-sm { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container-lowest text-primary dark:text-inverse-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant flat no shadows">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-lg">
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary" href="#">SaaSFlow</a>
+<div class="hidden md:flex items-center gap-md ml-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Discovery</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors Active: opacity-80" href="#">Directory</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-full bg-surface-container-lowest focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm w-48 transition-all" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md">Sign In</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors">Register</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow max-w-max-width mx-auto w-full px-lg py-xl">
+<!-- Search & Filter Header -->
+<section class="mb-xl">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm mb-lg">
+<div class="flex flex-col md:flex-row gap-md">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md transition-all" placeholder="Search businesses, keywords..." type="text"/>
+</div>
+<div class="flex gap-md">
+<select class="px-4 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:outline-none focus:border-primary">
+<option>Category</option>
+<option>Technology</option>
+<option>Finance</option>
+<option>Healthcare</option>
+</select>
+<select class="px-4 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:outline-none focus:border-primary">
+<option>City</option>
+<option>New York</option>
+<option>San Francisco</option>
+<option>London</option>
+</select>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">tune</span> Filters
+                        </button>
+</div>
+</div>
+</div>
+<!-- Category Pills -->
+<div class="flex flex-wrap gap-sm">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary-container/10 text-primary font-label-sm text-label-sm">All Categories</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm">Retail</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm">Professional Services</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm">Food &amp; Beverage</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-sm text-label-sm">Technology</button>
+</div>
+</section>
+<!-- Results Header -->
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-title-lg text-title-lg text-on-background">244 Businesses Found</h2>
+<div class="flex items-center gap-sm">
+<span class="text-body-sm text-on-surface-variant">Sort by:</span>
+<select class="border-none bg-transparent text-label-md text-primary focus:outline-none font-medium cursor-pointer">
+<option>Recommended</option>
+<option>Highest Rated</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+<!-- Business Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mb-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col hover:border-primary transition-colors shadow-sm group">
+<div class="flex justify-between items-start mb-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern logo for a technology company featuring abstract geometric shapes in shades of blue and indigo on a crisp white background, minimal and professional design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9TC_LVLOiPpfaBSl2p-m7EFMPn_OCkLsGKyR1YALb3PAJW0KhgC26rzff6xZFtQNWxqBzMCmtV5R1xIln0OKBa01ViMHa2CNKmIMKPWlO2uVrVkjFD0XyjsU9NuhuURMjZ1_w3ix6dyG1PNA-Imb0heEI1mthQYUF3jZx_sfqPPluGNPYLdfR-KOesfsl_cCAoW_CbNl-9EqTifUEgfKgQ_UCj9HGf9mukpbvjBdBY_QyGaHy0CdY"/>
+</div>
+<span class="bg-primary-container/20 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified
+                    </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs group-hover:text-primary transition-colors">Nexus Tech Solutions</h3>
+<p class="text-body-sm text-on-surface-variant mb-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">category</span> Technology
+                    <span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[14px]">location_on</span> San Francisco, CA
+                </p>
+<p class="text-body-md text-on-surface mb-lg flex-grow">Providing enterprise-grade cloud infrastructure and cybersecurity solutions for scaling businesses.</p>
+<div class="flex items-center gap-sm mt-auto">
+<button class="flex-grow border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-variant transition-colors">View Profile</button>
+<button class="flex-grow bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary-container transition-colors">Visit Website</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col hover:border-primary transition-colors shadow-sm group">
+<div class="flex justify-between items-start mb-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A minimalist logo for a design agency consisting of an elegant monogram with soft curves in dark slate gray, presented on a stark white background with subtle shading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVgaYUkjECLSDSrRajVHpREfB-q9qtw_l8kPu5vZyIS_MXzPO2De9eUUGcuuUcXbNU_0-jA0JNh-LiK2wzvDkVpvJHdqBxqEI1vuJPwnMo678uUg-hITnI3gStO3qheQQ_aGliX-L8DxdthN3a3zmt40YUmhRUu5qRIzotKweN9MugolUpgT3VudKZYCje2gNQss8Z7basfpcoEj9XXQIX-TRARzCqFpdQWN1-4fcueubfqyEUBUx4"/>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs group-hover:text-primary transition-colors">Elevate Design Agency</h3>
+<p class="text-body-sm text-on-surface-variant mb-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">category</span> Professional Services
+                    <span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[14px]">location_on</span> New York, NY
+                </p>
+<p class="text-body-md text-on-surface mb-lg flex-grow">Award-winning branding and UI/UX design studio helping startups build memorable digital products.</p>
+<div class="flex items-center gap-sm mt-auto">
+<button class="flex-grow border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-variant transition-colors">View Profile</button>
+<button class="flex-grow bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary-container transition-colors">Visit Website</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col hover:border-primary transition-colors shadow-sm group">
+<div class="flex justify-between items-start mb-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A bold, high-contrast logo for a financial firm featuring strong, solid typography and an upward trending graph icon in deep navy blue and bright green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADb6QnOUmbMPlQNViKEREGN_48eYuaNhhP2VOPzaVLN537g4NLaxmGR0HZvkKCZMIim3Vo1NEEdfTQJuPDfTbLj1J6NxTio2x_ULaLqTthumsMHHiGze32KSu3NWJLNS6vph1maJehz6GXWSaMYeOYT5PQfoEejXkg1IH_mQ1BHA7VXxicfW0a7bWnP4y8A8GFgPWoeYxuflVbv0d0XQhFaxqrP7rvZEmpREHeg0btvRkwdwRtyven"/>
+</div>
+<span class="bg-surface-variant text-on-surface px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span> Featured
+                    </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs group-hover:text-primary transition-colors">Apex Financial Partners</h3>
+<p class="text-body-sm text-on-surface-variant mb-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">category</span> Finance
+                    <span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[14px]">location_on</span> Chicago, IL
+                </p>
+<p class="text-body-md text-on-surface mb-lg flex-grow">Comprehensive wealth management and corporate advisory services for modern enterprises.</p>
+<div class="flex items-center gap-sm mt-auto">
+<button class="flex-grow border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2 rounded-lg hover:bg-surface-variant transition-colors">View Profile</button>
+<button class="flex-grow bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg hover:bg-primary-container transition-colors">Visit Website</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-sm">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:border-primary hover:text-primary transition-colors flex items-center justify-center">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:border-primary hover:text-primary transition-colors flex items-center justify-center">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:border-primary hover:text-primary transition-colors flex items-center justify-center">12</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-on-background text-on-surface font-body-sm text-body-sm full-width bottom-0 border-t border-outline-variant flat no shadows cursor-pointer">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto gap-md md:gap-0">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">SaaSFlow</div>
+<div class="text-on-surface-variant">© 2024 SaaSFlow Multi-Business Platform. All rights reserved.</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Settings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

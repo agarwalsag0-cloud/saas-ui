@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Enquiries CRM - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .layer-1 { box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 1px 2px rgba(0,0,0,0.06); }
+        .layer-2 { box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -2px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col w-[260px] h-full py-lg bg-on-secondary-fixed shadow-sm fixed left-0 top-0 z-20">
+<div class="px-md mb-xl flex items-center gap-md">
+<img alt="Business Logo" class="w-8 h-8 rounded" data-alt="A clean, minimalist logo of a stylized geometric shape in deep indigo blue against a crisp white background. High resolution, sharp edges, modern corporate aesthetic. Professional business emblem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqV1MU25HWpNRunskVpzNBVmLgg7FS9mEGt_ldyBqTakpveEU0HHk6cBiJZT6cJ50LUidllzEo3DaK_3o-dKOrwbpSWrkSme3DEy5Aq38ss5ehEPLN7aZTjqyO2sb96APUQ-rMxFgH8CezzsZ1GyQ934tO_cEOeMCo3jjPi5B6DksjXfgK5GtO8iGoDM89TiVs0YWUoj2SeVR3Nyqe51PByrsiRRsi3cD7XJzMX0-TidITNqWm2npp"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-surface">Business Portal</h1>
+<p class="font-body-sm text-body-sm text-surface/70">Manage Presence</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span> Business Profile
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Products &amp; Services
+            </a>
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-sm transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span> Enquiries
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+</div>
+<div class="px-md mt-auto space-y-md">
+<button class="w-full bg-primary text-on-primary py-2 rounded font-label-md text-label-md hover:bg-primary/90 transition-colors">Upgrade Plan</button>
+<div class="border-t border-on-secondary-fixed-variant/30 pt-md">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-sm py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span> Help Center
+                </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-sm py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Logout
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col ml-0 md:ml-[260px] h-screen bg-background">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-xl h-16 bg-surface border-b border-outline-variant shrink-0 sticky top-0 z-10">
+<div class="flex items-center gap-md">
+<!-- Mobile menu toggle placeholder -->
+<button class="md:hidden text-on-surface-variant"><span class="material-symbols-outlined">menu</span></button>
+<h2 class="font-title-md text-title-md text-primary hidden md:block">Enquiries CRM</h2>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-colors"><span class="material-symbols-outlined" data-icon="help_outline">help_outline</span></button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-colors"><span class="material-symbols-outlined" data-icon="apps">apps</span></button>
+</div>
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a business administrator. A middle-aged person wearing a smart casual navy blazer, smiling subtly. The background is a blurred modern office setting with bright, natural lighting. High quality corporate portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuOnPxVrX5umusbnx8vj3qgU7SX0Tm-t0sBhhVdjv7gi81XSeYmkMfcWygFnuHBcRgCSpoLrNSeZhZU2A7JogpezSUaLoL41vH0X4Wf9wYVojzekVpE2QfWGTpyteQqtWjMmMEBvi1j0L95pDOWfhyrY97ITVrff6qQQx3viXLswtXEtPm2D5v2NI6y8526K3fA_93nge2lM6LE4hACimpShlIGMR7DVciHt1DUEvmYGhuQ24GYczN"/>
+</div>
+</header>
+<!-- CRM Content -->
+<div class="flex-1 overflow-hidden flex flex-col md:flex-row p-md md:p-lg gap-gutter">
+<!-- List View Panel -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest layer-1 rounded-lg border border-outline-variant overflow-hidden min-w-[320px]">
+<!-- Header & Filters -->
+<div class="p-md border-b border-outline-variant bg-surface shrink-0 flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-title-md font-semibold">All Enquiries</h3>
+<span class="bg-surface-container text-on-surface px-2 py-1 rounded-full font-label-sm text-label-sm">24 Total</span>
+</div>
+<div class="flex gap-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-3 py-1.5 border border-outline-variant rounded font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search customer, subject..." type="text"/>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 border border-outline-variant rounded font-label-sm text-label-sm hover:bg-surface-container-low transition-colors bg-surface-container-lowest text-on-surface">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter
+                        </button>
+</div>
+</div>
+<!-- Enquiries List -->
+<div class="flex-1 overflow-y-auto">
+<!-- Item 1 (Active) -->
+<div class="p-md border-b border-outline-variant border-l-2 border-l-primary bg-primary-container/5 cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md font-semibold truncate">Sarah Jenkins</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap ml-2">10:42 AM</span>
+</div>
+<p class="font-body-sm text-body-sm font-medium mb-2 truncate">Inquiry regarding Enterprise Licensing</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error-container"></span> New
+                            </span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-md border-b border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md font-semibold truncate">TechCorp Solutions</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap ml-2">Yesterday</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2 truncate">API Integration Support Request</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> In Progress
+                            </span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-md border-b border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md font-semibold truncate">Michael Chang</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap ml-2">Oct 24</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2 truncate">Billing discrepancy on last invoice</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span> Contacted
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Panel -->
+<div class="flex-[1.5] flex flex-col bg-surface-container-lowest layer-1 rounded-lg border border-outline-variant overflow-hidden hidden md:flex">
+<!-- Detail Header -->
+<div class="p-lg border-b border-outline-variant shrink-0 flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold mb-1">Inquiry regarding Enterprise Licensing</h2>
+<div class="flex items-center gap-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">person</span> Sarah Jenkins (sarah.j@example.com)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Oct 26, 2024 at 10:42 AM</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant border border-outline-variant rounded hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">print</span></button>
+</div>
+</div>
+<!-- Detail Body (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-lg">
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant mb-lg font-body-md text-body-md whitespace-pre-wrap">Hello Team,
+
+I am writing to inquire about your enterprise licensing tiers for a team of 50+ users. We are currently evaluating several platforms and would like to understand your volume discount structures and SLA commitments.
+
+Could we schedule a brief call next week to discuss?
+
+Best regards,
+Sarah Jenkins
+Director of Operations, WidgetCo</div>
+</div>
+<!-- Detail Footer / Actions -->
+<div class="p-lg border-t border-outline-variant shrink-0 bg-surface flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Update Status:</span>
+<select class="border border-outline-variant rounded px-3 py-1.5 font-label-md text-label-md focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest">
+<option selected="" value="new">New</option>
+<option value="contacted">Contacted</option>
+<option value="inprogress">In Progress</option>
+<option value="resolved">Resolved</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded font-label-md text-label-md hover:bg-primary/90 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">reply</span> Reply
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

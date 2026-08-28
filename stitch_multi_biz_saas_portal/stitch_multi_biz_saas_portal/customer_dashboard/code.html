@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Dashboard - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "headline-md": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md h-screen overflow-hidden flex flex-col md:flex-row">
+<!-- Mobile Top App Bar (Hidden on Desktop) -->
+<header class="md:hidden flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto border-b border-outline-variant bg-surface sticky top-0 z-50">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">SaaSFlow</div>
+<div class="flex gap-md items-center text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high rounded-full p-2">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high rounded-full p-2">menu</span>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col w-[260px] h-full py-lg bg-on-secondary-fixed shadow-sm fixed left-0 top-0 transition-all duration-200 ease-in-out z-40">
+<div class="px-md mb-lg flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A clean, minimalist abstract avatar representing a consumer profile in a modern digital platform. The avatar uses soft pastel colors with a subtle gradient, ensuring a friendly and approachable aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJVZlQcZjE2oOfNSOq-oGF2pqwHWaj3eD6NB6kbZoM325a0c9APEd884Yfn54MTD8RwWjA9rSKpmwc1cOsCeb9Z1MTuDQoS-ObD9fjTBKOzNQmb_rA1II9URzsPCipFD_BUw1PGXx4rueTS78Od-XHrlv9f728wGuewXHXdclDpREe1OhKCfeI3UeYnJbl9w2rsGFItydirxW5jFvsXAbcHpGuGVHzB0jWYqIfX4o3uMicgVucDptJ"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-surface truncate">Customer Portal</h1>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Manage Experience</p>
+</div>
+</div>
+<ul class="flex flex-col gap-sm flex-grow font-label-md text-label-md">
+<li>
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">storefront</span>
+                    Public Businesses
+                </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+                    My Enquiries
+                </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    My Orders
+                </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Profile
+                </a>
+</li>
+</ul>
+<div class="px-md mt-auto">
+<button class="w-full py-sm px-md bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors mb-md flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">search</span>
+                Quick Browse
+            </button>
+<ul class="flex flex-col gap-sm font-label-md text-label-md border-t border-on-secondary-fixed-variant pt-md">
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">notifications</span>
+                        Notifications
+                    </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">help</span>
+                        Help Center
+                    </a>
+</li>
+<li>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto md:ml-[260px] bg-background">
+<!-- TopAppBar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-xl h-16 w-full border-b border-outline-variant bg-surface sticky top-0 z-30">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Welcome back, Alex</div>
+<div class="flex items-center gap-md text-primary font-title-md text-title-md">
+<div class="relative w-64 mr-md">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-lg pr-sm py-xs border border-outline-variant rounded bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm text-body-sm" placeholder="Search businesses..." type="text"/>
+</div>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high rounded-full p-2 transition-all">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high rounded-full p-2 transition-all">apps</span>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-lg md:p-xl flex-1 max-w-max-width mx-auto w-full">
+<div class="mb-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-on-surface mb-sm">Dashboard</h2>
+<p class="font-body-lg text-on-surface-variant">Here is a quick overview of your recent activity and engagements.</p>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="bg-primary-container/20 p-sm rounded-full text-primary">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-1 rounded-full">New Replies</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">12</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Active Enquiries</p>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="bg-secondary-container/30 p-sm rounded-full text-secondary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-1 rounded-full">Pending (2)</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">5</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Recent Orders</p>
+</div>
+</div>
+<!-- Stat Card 3 (Action) -->
+<div class="bg-primary text-on-primary rounded-lg p-lg shadow-sm flex flex-col justify-between items-start relative overflow-hidden group cursor-pointer hover:bg-primary-container transition-colors">
+<div class="absolute -right-4 -top-4 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[100px]">storefront</span>
+</div>
+<div class="relative z-10 w-full">
+<h3 class="font-title-lg text-title-lg mb-sm">Discover Services</h3>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mb-lg w-3/4">Find new businesses and connect with local providers instantly.</p>
+<button class="bg-surface text-primary font-label-md text-label-md py-sm px-md rounded flex items-center gap-xs hover:bg-surface-container-lowest transition-colors w-max">
+                            Quick Browse <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div>
+<div class="flex justify-between items-center mb-md border-b border-outline-variant pb-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface">Recent Activity</h3>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-xs" href="#">View All <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-primary font-title-lg text-title-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional logo for an IT consulting firm. The logo features a stylized network node graphic in deep slate and electric indigo colors, presented on a stark white background to convey reliability and modern minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn6uuT_XHxiYHeDxlerGQUAR4uqMu5iPPgjrXy9-fTyQJ6XM05P0AUnIvEaAJzibRLxyzNcMessWKzpEMhckcdqSCe7qebFpu1vzB5m9roYQnpL0Yl6-XNOaLkiBXAfcUetqwTHyIUB1PtLJ0QilmXGlFpl2mJmZmxLrH1S6i4l5zI9ewzotbqCsO4c47TGu-Y9xJfUox30X9qnS4BxJZ2Umr7cG17nA69G_Gh4A8M7aa4Y_mc8v_a"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Nexus Tech Consulting</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> Enquiry Replied • 2 hours ago</p>
+</div>
+</div>
+<div class="hidden md:flex gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2"><span class="material-symbols-outlined">mail</span></button>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary font-title-lg text-title-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern logo for a design agency. The logo consists of geometric abstract shapes overlapping in shades of electric indigo and slate, placed on a pristine white background. It represents creativity and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUlL-YnYwo5yu8vHpMNtw4ZIkUc6U3cVNE8pqME4X7LYyWaNorMfe-ABsRqokt4KLVbPMcxW-VtjGQx9yn3mBsUDIXhv4MxXX6piDJE5Cu_NGG7jw95n7chujc4op_JPIy5eGqJQNRWiI-sLZd41kXhD9M_ttpXnYqigzYnto11cdX-TYl1T1PCSlhMxUBC61SyoMz6VYSBvbCfDahb7CUtjfTtuqmUWMgEe8HFAPWKq5qAUy0Mqde"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Aura Design Studio</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">receipt_long</span> Order Placed • Yesterday</p>
+</div>
+</div>
+<div class="hidden md:flex gap-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded">Processing</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-tertiary font-title-lg text-title-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist logo for a legal services firm. The design uses crisp, thin lines forming a subtle scale motif in deep slate grey, set against a stark white background to convey authority and modern professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKplI3eF72MksqQeY5HIyGaGMUaKB7ICdNJ1Xy997P_hzoC9Bw-9hfqpSmJWyCJlAS63zCQDySFP3JXRs-VewXDwp_Q2b_sJTY2xVD8zAXxoZG-QuCGef8TSaIsO9MXWFoIDdDPj2hdU2MlIKa2bnN3iF6S63p_D7C8ytKnrC9CCLXL1wEpygPacZk1_s1mledThLi4p2e1AYEmqQDDT4v7yTTcBx172eJhQvyFcFxSsuIGypUsn-d"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Smith &amp; Associates Legal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">visibility</span> Profile Viewed • 3 days ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden flex justify-around items-center h-16 w-full bg-surface-container-lowest border-t border-outline-variant fixed bottom-0 z-50">
+<a class="flex flex-col items-center gap-xs p-2 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center gap-xs p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-xs p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Inbox</span>
+</a>
+<a class="flex flex-col items-center gap-xs p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "2xl": "48px",
+                        lg: "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        sm: "8px",
+                        xs: "4px",
+                        gutter: "24px",
+                        "margin-desktop": "32px",
+                        md: "16px",
+                        base: "4px",
+                        xl: "32px",
+                        "margin-mobile": "16px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "headline-md": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9FAFB; }
+        .form-input {
+            border: 1px solid #D1D5DB;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0.75rem;
+            transition: all 0.2s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #3e32d3;
+            box-shadow: 0 0 0 3px rgba(62, 50, 211, 0.1);
+        }
+        .form-input.read-only {
+            background-color: #F3F4F6;
+            color: #6B7280;
+            cursor: not-allowed;
+        }
+        .form-input.error {
+            border-color: #ba1a1a;
+        }
+        .form-input.error:focus {
+            box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.1);
+        }
+    </style>
+</head>
+<body class="text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col w-[260px] h-full py-lg bg-on-secondary-fixed dark:bg-on-background fixed left-0 top-0 shadow-sm z-50">
+<div class="px-md mb-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-headline-sm">S</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-surface">Business Portal</h1>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant">Manage Presence</p>
+</div>
+</div>
+<div class="flex-1 px-sm space-y-sm">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Business Profile</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products &amp; Services</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-label-md">Enquiries</span>
+</a>
+<!-- Active Tab: Settings conceptually maps to Profile -->
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="px-sm mt-auto space-y-sm pb-md">
+<button class="w-full bg-primary text-white py-sm rounded font-label-md mb-md">Upgrade Plan</button>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded transition-all duration-200 ease-in-out hover:bg-surface-variant/10 hover:text-surface" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[260px] w-full min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-xl h-16 w-full bg-surface border-b border-outline-variant z-40 sticky top-0">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface hidden md:block">Admin Console</h2>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex-1 flex justify-end items-center gap-md">
+<div class="hidden sm:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-outline">search</span>
+<input class="form-input pl-10 bg-surface-container-lowest text-body-md w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A small, professional avatar headshot of a business administrator in a modern, light-mode setting. The portrait features clean lighting, soft background blur, and a crisp, corporate aesthetic suitable for a high-end SaaS dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-om4cUCeXEklIChRMFdxVSyy9KMmuJlcp6FvFL1r39exRAevMVAktfjc37kc_8R5L4Wm7pprVI7l33cdrb1kJyEGn7utrzdIrctnTywAoY2lQEAlKFw53mZQvB-0vDTpiUxNgI6WdrFAgTMct-RcKL7iBsf8kgUBREwq-lyQckozAyGakI9k_9OlErkzMi7EuSDqKQ0uMkoHarvTYh6-3k05Cg3GcnaE-aF7i2hLs0aEZ3VUO6En4"/>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-lg md:p-xl w-full max-w-4xl mx-auto">
+<div class="mb-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Customer Profile</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your personal information and contact details.</p>
+</div>
+<!-- Profile Form Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-sm">
+<!-- Avatar Section -->
+<div class="flex items-center gap-lg mb-xl pb-lg border-b border-outline-variant">
+<div class="relative group">
+<img class="w-24 h-24 rounded-full object-cover border border-outline-variant" data-alt="A high-quality, professional profile portrait of a modern business user. The subject is well-lit with natural, soft light in a bright, minimalist office setting. The composition is clean, centered, and reflects a premium corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgqvfUNKxsUHCNA9tooH6yNF-iDxgdnB7T5wzko8oQGN8Su4Zh13f6I2UR5ZQH7PUlwcoMAHnJih_Ej8OEVwua5Woueodzq7fOzMxDPw87CHMwxleX2eqstu8D_yHxTwdm8Gl8tRHHz4qHcBcV9AdN-0ioy4wSfM8EhEDykoMG_8t962SoUEWe7odA3zgTDK5_nqBQIeL0Iu7nfoeo3Ob9r8xfWfJyGfWhC8T7-u3-1CWrR7_WOoU1"/>
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Profile Picture</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-3">JPG, GIF or PNG. Max size of 800K</p>
+<button class="text-primary font-label-md text-label-md border border-outline-variant px-4 py-2 rounded hover:bg-surface-container-low transition-colors">Change Picture</button>
+</div>
+</div>
+<form class="space-y-lg">
+<!-- Grid Layout for Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Name Field (Validated State) -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="fullName">Full Name</label>
+<input class="form-input w-full font-body-md text-on-surface" id="fullName" type="text" value="Jane Doe"/>
+<p class="font-body-sm text-body-sm text-primary flex items-center gap-1 hidden">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Valid name
+                            </p>
+</div>
+<!-- Email Field (Read Only) -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="email">Google Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline-variant text-[20px]">mail</span>
+<input class="form-input read-only w-full pl-10 font-body-md text-on-surface-variant" id="email" readonly="" type="email" value="jane.doe@example.com"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Linked via Google SSO</p>
+</div>
+<!-- Phone Field (Error State Example) -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="phone">Phone Number</label>
+<input class="form-input error w-full font-body-md text-on-surface" id="phone" type="tel" value="+1 (555) 000"/>
+<p class="font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">error</span> Incomplete phone number
+                            </p>
+</div>
+<!-- Address Field (Full Width) -->
+<div class="space-y-2 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface" for="address">Street Address</label>
+<input class="form-input w-full font-body-md text-on-surface" id="address" type="text" value="123 Innovation Drive, Tech Park"/>
+</div>
+</div>
+<!-- Submit Actions -->
+<div class="pt-lg border-t border-outline-variant flex justify-end gap-md">
+<button class="px-md py-2 border border-outline-variant rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors" type="button">Cancel</button>
+<button class="px-md py-2 bg-primary text-white rounded font-label-md text-label-md hover:bg-primary-container hover:text-white transition-colors" type="submit">Save Profile</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</body></html>

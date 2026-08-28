@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSFlow - Contact Business</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0f3ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c7c4d8;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #777587;
+        }
+        .input-halo:focus {
+            box-shadow: 0 0 0 3px rgba(62, 50, 211, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container-lowest docked full-width top-0 border-b border-outline-variant flat no shadows sticky z-50">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-md">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">SaaSFlow</span>
+<div class="hidden md:flex ml-lg gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-5" href="#">Discovery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-5" href="#">Directory</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-5" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-5" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-primary font-label-md text-label-md hover:bg-surface-container-high rounded-full px-4 py-2 transition-colors">Sign In</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md rounded-full px-4 py-2 hover:bg-primary-container transition-colors shadow-sm">Register</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center py-2xl px-md sm:px-lg lg:px-2xl bg-surface-bright relative overflow-hidden">
+<!-- Decorative Background Gradient -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] bg-primary-fixed rounded-full blur-[120px] opacity-30"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-secondary-container rounded-full blur-[100px] opacity-40"></div>
+</div>
+<div class="relative z-10 w-full max-w-3xl">
+<!-- Header Section -->
+<div class="text-center mb-xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-sm">Contact Us</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">We're here to help. Send us your enquiry and our team will get back to you shortly.</p>
+</div>
+<!-- Form Card (Glassmorphism inspired, but grounded in system) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),_0px_4px_6px_-2px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300" id="form-container">
+<div class="p-lg md:p-2xl">
+<form class="space-y-lg" id="enquiry-form">
+<!-- Row 1: Name & Email -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="name">Full Name <span class="text-error">*</span></label>
+<input class="w-full h-10 px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary input-halo transition-all placeholder:text-on-surface-variant/50" id="name" name="name" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email Address <span class="text-error">*</span></label>
+<input class="w-full h-10 px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary input-halo transition-all placeholder:text-on-surface-variant/50" id="email" name="email" placeholder="jane@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Row 2: Phone & Request Type -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="phone">Phone Number</label>
+<input class="w-full h-10 px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary input-halo transition-all placeholder:text-on-surface-variant/50" id="phone" name="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="type">Request Type <span class="text-error">*</span></label>
+<div class="relative">
+<select class="w-full h-10 px-3 py-2 pr-10 bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary input-halo transition-all appearance-none cursor-pointer" id="type" name="type" required="">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="general">General Enquiry</option>
+<option value="support">Technical Support</option>
+<option value="sales">Sales &amp; Pricing</option>
+<option value="partnership">Partnership</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Message -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="message">Message / Request Details <span class="text-error">*</span></label>
+<textarea class="w-full p-3 bg-surface-container-lowest border border-outline-variant rounded text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary input-halo transition-all resize-y custom-scrollbar placeholder:text-on-surface-variant/50" id="message" name="message" placeholder="How can we help you today?" required="" rows="5"></textarea>
+<p class="mt-xs text-right font-body-sm text-body-sm text-on-surface-variant" id="char-count">0/500</p>
+</div>
+<!-- Actions -->
+<div class="pt-sm flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fields marked with <span class="text-error">*</span> are required.</p>
+<button class="bg-primary text-on-primary font-label-md text-label-md h-10 px-lg rounded flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95 min-w-[140px]" id="submit-btn" type="submit">
+<span class="btn-text">Send Message</span>
+<span class="material-symbols-outlined text-[18px] btn-icon">send</span>
+<!-- Spinner (Hidden by default) -->
+<svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-on-primary hidden spinner" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</button>
+</div>
+</form>
+<!-- Success State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center text-center py-2xl opacity-0 transition-opacity duration-500" id="success-state">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-md shadow-sm">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm">Message Sent Successfully</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-lg">Thank you for reaching out. We have received your enquiry and will be in touch within 24 hours.</p>
+<button class="border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md h-10 px-lg rounded hover:bg-surface-container-low transition-colors" id="reset-btn">
+                            Send Another Request
+                        </button>
+</div>
+</div>
+</div>
+<!-- Contextual Image/Graphic Space below form -->
+<div class="mt-xl flex justify-center">
+<div class="bg-cover bg-center w-full max-w-2xl h-48 rounded-lg shadow-sm border border-outline-variant opacity-80" data-alt="A clean, abstract architectural interior shot featuring bright, high-key lighting, soft white shadows, and minimalist slate grey elements, representing a modern corporate workspace aesthetic perfectly aligned with SaaS UI themes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBc42c1UK8Xt3e5P48x3kR1r6yDZTE0XjnbCo8ATLwaCvoSqbq48--7PIbIc1hWLjqJvAqDDpdccLxbi89lw57Ti_tC7O4ia1BPDsCinCDNXDG7q-ZHtCcTV8sl5nst15agVslywaXa1u3B9Fvky3NczFsCtPveuvpM-EwX4KWIDedvM3i5W3lo9OHqE02xw8A5ZOHs72mZ89rdc9TqjJ90OuPdISuerhyXbYKIcD4yL7xy3SRdiNOp')"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-on-background full-width bottom-0 border-t border-outline-variant flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto">
+<div class="mb-md md:mb-0">
+<span class="font-headline-sm text-headline-sm font-bold text-primary mr-md">SaaSFlow</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2024 SaaSFlow Multi-Business Platform. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap gap-md justify-center">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Cookie Settings</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('enquiry-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnIcon = submitBtn.querySelector('.btn-icon');
+            const spinner = submitBtn.querySelector('.spinner');
+            const formContainer = document.getElementById('form-container');
+            const successState = document.getElementById('success-state');
+            const resetBtn = document.getElementById('reset-btn');
+            const messageInput = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+
+            // Character count for textarea
+            messageInput.addEventListener('input', (e) => {
+                const currentLength = e.target.value.length;
+                charCount.textContent = `${currentLength}/500`;
+                if(currentLength > 500) {
+                    charCount.classList.add('text-error');
+                    charCount.classList.remove('text-on-surface-variant');
+                } else {
+                    charCount.classList.remove('text-error');
+                    charCount.classList.add('text-on-surface-variant');
+                }
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Basic validation style simulation
+                const requiredInputs = form.querySelectorAll('[required]');
+                let isValid = true;
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.classList.add('border-error');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('border-error');
+                    }
+                });
+
+                if(!isValid) return;
+
+                // Loading State
+                btnText.textContent = 'Sending...';
+                btnIcon.classList.add('hidden');
+                spinner.classList.remove('hidden');
+                submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+                submitBtn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    // Transition to success state
+                    form.classList.add('hidden');
+                    successState.classList.remove('hidden');
+                    
+                    // Trigger fade in for success
+                    setTimeout(() => {
+                        successState.classList.remove('opacity-0');
+                    }, 50);
+
+                    // Reset button state silently in background
+                    setTimeout(() => {
+                        btnText.textContent = 'Send Message';
+                        btnIcon.classList.remove('hidden');
+                        spinner.classList.add('hidden');
+                        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+                        submitBtn.disabled = false;
+                    }, 500);
+
+                }, 1500);
+            });
+
+            // Reset form
+            resetBtn.addEventListener('click', () => {
+                form.reset();
+                charCount.textContent = '0/500';
+                charCount.classList.remove('text-error');
+                charCount.classList.add('text-on-surface-variant');
+                
+                successState.classList.add('opacity-0');
+                
+                setTimeout(() => {
+                    successState.classList.add('hidden');
+                    form.classList.remove('hidden');
+                }, 300);
+            });
+            
+            // Remove error styling on input
+            form.addEventListener('input', (e) => {
+                if(e.target.classList.contains('border-error')) {
+                     e.target.classList.remove('border-error');
+                }
+            });
+        });
+    </script>
+</body></html>

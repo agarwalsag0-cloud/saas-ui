@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Website - SaaSFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-lowest text-primary dark:text-inverse-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant flat no shadows sticky z-50">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+                Acme Corp
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex gap-lg h-full">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 h-full flex items-center pt-1 hover:opacity-80 transition-opacity" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors h-full flex items-center" href="#">Listings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors h-full flex items-center" href="#">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-md">
+<button class="hidden md:block font-label-md text-label-md text-primary hover:text-primary-container transition-colors">Sign In</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded hover:opacity-90 transition-opacity">Register</button>
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+<!-- Background Image Placeholder -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" data-alt="A sweeping, high-resolution establishing shot of a modern, eco-friendly corporate headquarters building exterior. The architecture features sleek glass panels, organic wood accents, and lush green rooftop gardens. It is a bright, sunny day with clear blue skies, establishing an optimistic, forward-looking mood. The lighting is crisp and natural, highlighting the clean lines and premium materials of the structure, fitting for an authoritative business landing page." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2hk31agULAlqG17AuJOTdYeIPFp_WyXPgQyfXyW4Lsb1q5y1EKPkmfKNw7ZfUxeQYsNzA5Xr0vMWUZweBWh5RcHwXFaPcVXow7kVFmhjWgoqaYHreGxZCDSd6_eMk8BIk0I3iGPgGpjatQzYlcAoBvCgvsPkzYGqimoO6Znlp5nFR3VnjlXSanTHimKqu30YP_1dELsPVJWcdXzoTpo51SCuSws7BnnTg7c49nWZIOKxfx6-tPZ6u')"></div>
+<div class="absolute inset-0 bg-on-background/40"></div>
+</div>
+<div class="relative z-10 text-center px-lg max-w-3xl mx-auto flex flex-col items-center gap-lg">
+<h1 class="font-display-lg md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary">Innovating the Future of Tech</h1>
+<p class="font-title-lg text-title-lg text-on-primary/90 max-w-2xl">Providing cutting-edge SaaS solutions to streamline your business operations and accelerate growth.</p>
+<button class="mt-sm bg-primary text-on-primary font-label-md text-label-md px-xl py-md rounded-lg shadow-sm hover:bg-primary-container transition-colors flex items-center gap-2">
+                    Get in Touch
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<div class="max-w-max-width mx-auto w-full px-lg py-3xl flex flex-col gap-3xl">
+<!-- About Section Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-xl shadow-sm flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">About Acme Corp</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex-grow">Founded in 2015, we are dedicated to transforming how modern enterprises operate. Our suite of cloud-based tools empowers teams to collaborate seamlessly across the globe. We believe in intuitive design, robust infrastructure, and relentless innovation.</p>
+<div class="flex gap-lg mt-md">
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary">10k+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Users</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary">99.9%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Uptime</span>
+</div>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container rounded-xl p-xl shadow-sm flex flex-col items-center justify-center text-center gap-md relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+<span class="material-symbols-outlined text-[48px] relative z-10" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<h3 class="font-title-lg text-title-lg relative z-10">Our Mission</h3>
+<p class="font-body-md text-body-md opacity-90 relative z-10">To accelerate human progress through accessible, scalable technology solutions.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-on-background text-on-surface font-body-sm text-body-sm full-width bottom-0 border-t border-outline-variant flat no shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto gap-lg">
+<div class="font-headline-sm text-headline-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+                SaaSFlow
+            </div>
+<nav class="flex flex-wrap justify-center gap-x-lg gap-y-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Cookie Settings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Contact Support</a>
+</nav>
+<div class="text-on-surface-variant text-center md:text-right">
+                © 2024 SaaSFlow Multi-Business Platform. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSFlow - Register Your Business</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "surface-tint": "#4e44e2",
+                        "tertiary-fixed": "#e1e3e4",
+                        "background": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface-variant": "#464555",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "tertiary-container": "#67696a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "inverse-surface": "#2a313d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-tertiary-container": "#e8e9ea",
+                        "on-background": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-primary-container": "#e9e5ff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary": "#4e5152",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#3e32d3",
+                        "on-surface": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#dce2f7",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#777587",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-variant": "#dce2f3",
+                        "primary-container": "#5850ec",
+                        "on-primary-fixed-variant": "#3424ca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "max-width": "1440px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation (Simplified for Transactional/Registration Flow) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+                SaaSFlow
+            </div>
+<div>
+<span class="text-on-surface-variant text-body-md">Already have an account? <a class="text-primary font-medium hover:underline" href="#">Sign In</a></span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-2xl px-margin-mobile md:px-margin-desktop">
+<!-- Main Content Area -->
+<div class="w-full max-w-3xl">
+<!-- Header Section -->
+<div class="text-center mb-xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-sm">Register Your Business</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Join the SaaSFlow ecosystem. Registration requires platform approval before your listing becomes public.</p>
+</div>
+<!-- Registration Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<!-- Progress Stepper -->
+<div class="bg-surface-container-low px-lg py-md border-b border-outline-variant flex justify-between items-center relative">
+<!-- connecting line -->
+<div class="absolute top-1/2 left-lg right-lg h-[2px] bg-outline-variant -translate-y-1/2 z-0 hidden md:block"></div>
+<div class="absolute top-1/2 left-lg right-1/2 h-[2px] bg-primary -translate-y-1/2 z-0 hidden md:block"></div>
+<div class="flex flex-col items-center z-10 relative">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-body-md mb-xs">1</div>
+<span class="text-label-sm font-label-sm text-primary">Business</span>
+</div>
+<div class="flex flex-col items-center z-10 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-body-md mb-xs">2</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Owner</span>
+</div>
+<div class="flex flex-col items-center z-10 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-body-md mb-xs">3</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Plan</span>
+</div>
+</div>
+<div class="p-lg md:p-xl">
+<!-- Step 1: Business Information Form -->
+<form class="space-y-lg" id="step1-form">
+<h2 class="font-title-lg text-title-lg text-on-surface border-b border-outline-variant pb-xs mb-md">Business Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="businessName">Business Name <span class="text-error">*</span></label>
+<input class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="businessName" placeholder="e.g., Acme Corp" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="category">Category <span class="text-error">*</span></label>
+<select class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="category">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="software">Software &amp; IT</option>
+<option value="marketing">Marketing Agency</option>
+<option value="consulting">Consulting</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="tagline">Tagline</label>
+<input class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="tagline" placeholder="Brief description of what you do" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="bizEmail">Business Email <span class="text-error">*</span></label>
+<input class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="bizEmail" placeholder="contact@acme.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="bizPhone">Business Phone</label>
+<input class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="bizPhone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="address">Physical Address</label>
+<input class="w-full h-10 px-3 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="address" placeholder="123 Main St, Suite 400, City, Country" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="description">Detailed Description</label>
+<textarea class="w-full px-3 py-2 border border-outline rounded bg-surface-container-lowest text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-y" id="description" placeholder="Tell us more about your business operations..." rows="4"></textarea>
+</div>
+<!-- Form Actions -->
+<div class="flex justify-end pt-md border-t border-outline-variant mt-lg">
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-label-md text-label-md hover:bg-primary-fixed-variant transition-colors flex items-center gap-2" type="button">
+                                Continue to Owner Info
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<div class="mt-md text-center">
+<p class="text-body-sm text-on-surface-variant">By continuing, you agree to our <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.</p>
+</div>
+</div>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-lg px-lg text-center mt-auto">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 SaaSFlow Multi-Business Platform. All rights reserved.</p>
+</footer>
+</body></html>

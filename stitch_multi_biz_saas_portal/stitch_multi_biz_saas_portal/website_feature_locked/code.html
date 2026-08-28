@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSFlow - Feature Locked</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#404758",
+                      "surface-tint": "#4e44e2",
+                      "tertiary-fixed": "#e1e3e4",
+                      "background": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#5c6274",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "on-surface-variant": "#464555",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "tertiary-container": "#67696a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#575e70",
+                      "outline-variant": "#c7c4d8",
+                      "on-secondary-fixed": "#141b2b",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d9dff5",
+                      "inverse-surface": "#2a313d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-container": "#e8e9ea",
+                      "on-background": "#151c27",
+                      "surface-container": "#e7eefe",
+                      "on-primary-container": "#e9e5ff",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "tertiary": "#4e5152",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2dfff",
+                      "primary": "#3e32d3",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-dim": "#d3daea",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#dce2f7",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-fixed": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#777587",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-variant": "#dce2f3",
+                      "primary-container": "#5850ec",
+                      "on-primary-fixed-variant": "#3424ca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "max-width": "1440px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "title-md": ["Inter"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .feature-locked-bg {
+            background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.05), transparent 400px),
+                              radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.03), transparent 300px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-on-secondary-fixed dark:bg-on-background h-full w-[260px] fixed left-0 top-0 py-lg shadow-sm z-50">
+<div class="px-md mb-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="Business Logo" class="w-full h-full object-cover" data-alt="A minimalist, modern geometric business logo in stark white and deep indigo. The design features a stylized 'S' intersected by clean, precise lines, set against a dark background, reflecting a professional SaaS brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRV97zmM_nwvHW3drNVWSuLHKKv0DOWanewKMocsFrPfL2xpUmD_BHo7wf7B1EI05Uqn4U5M3o0TGGsykhYRSJ4LCyNAWzO39kwUQqpLvUq93G5qIbOcwsIiBYPeWCPIkWx2T1tJf5e-rLcySdmshCJCtsIU47nXSTyUqUQRtQdV36C8N0oliKNOycmR0O8zN4nB00kwRgvCj3QWUhZoDiNMf6zf8KUc_P7DWkrR3TsCbzkSpRwEV"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-surface m-0 leading-tight">Business Portal</h2>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant m-0">Manage Presence</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-sm flex flex-col gap-xs">
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                Business Profile
+            </a>
+<a class="text-primary-fixed bg-primary-container/10 border-l-4 border-primary-fixed flex items-center gap-md px-md py-sm rounded-r-DEFAULT transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Products &amp; Services
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                Enquiries
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto px-md pt-lg flex flex-col gap-sm border-t border-on-secondary-fixed-variant/20">
+<button class="w-full py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                Upgrade Plan
+            </button>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+<a class="text-on-secondary-fixed-variant flex items-center gap-md px-md py-sm rounded-DEFAULT hover:bg-surface-variant/10 hover:text-surface transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[260px] min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center px-xl h-16 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface">Admin Console</h1>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ml-2 overflow-hidden border border-outline-variant">
+<img alt="Administrator Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate administrator in a modern office setting. Crisp focus, soft diffuse lighting, wearing professional attire against a blurred, bright corporate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV9Wuxpjm3kQZfCwvGgPTomSbmHoGjcfUmhtZntsNOPOlwx8v6vYdx5_EzM4Fb4wypSbv4t7k3DSvJJtjljoosf65ZoT2e3k5-6baUvdL45gqMSg2eSO1yWeHvIizphdT9NYiYR8Y3GfSe06PeUgBzqtdpVFEzALmaktVznBQyRg8ljhYMNQglNqeekmqrvbqN6UedksuYihEfeyEuLrxZOpYpihekGl2Jghu3wVGgsFrJr0hVwE0O"/>
+</div>
+</div>
+</header>
+<!-- Feature Content (Locked State) -->
+<div class="flex-1 p-lg md:p-xl feature-locked-bg flex items-center justify-center">
+<div class="max-w-[800px] w-full">
+<!-- Premium Locked Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col md:flex-row relative">
+<!-- Decorative Element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<!-- Left: Content & Context -->
+<div class="p-lg md:p-2xl flex-1 flex flex-col justify-center border-b md:border-b-0 md:border-r border-outline-variant relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center mb-lg border border-surface-container-highest shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary opacity-80" data-icon="language" data-weight="fill" style="font-variation-settings: 'FILL' 1;">language</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 bg-surface-container-lowest rounded-full flex items-center justify-center border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-lg text-outline" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Public Website isn't included in your current plan</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-[90%]">
+                            Unlock a professional, customizable storefront to increase your brand's visibility and capture more direct enquiries from potential clients.
+                        </p>
+<div class="space-y-4 mb-xl">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="check_circle">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Custom Domain &amp; Branding</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Connect your own domain and style the site to match your brand identity.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="check_circle">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Integrated SEO Tools</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Built-in optimization to help your business rank higher in search results.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="check_circle">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Direct Enquiry Forms</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Capture leads directly into your SaaSFlow dashboard without third-party integrations.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Plan Context & Action -->
+<div class="p-lg md:p-xl w-full md:w-[320px] bg-surface-container-lowest flex flex-col justify-between relative z-10">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-md">Plan Status</h3>
+<div class="p-4 rounded-lg border border-outline-variant bg-surface mb-md">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Current Plan</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Basic</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Core business management tools.</div>
+</div>
+<div class="p-4 rounded-lg border-2 border-primary/20 bg-primary/5">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Required Plan</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">Pro</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Includes Public Website, Advanced Analytics, and Custom Integrations.</div>
+</div>
+</div>
+<div class="mt-xl space-y-3">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                                Upgrade to Pro
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full py-3 px-4 bg-transparent border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors">
+                                Contact Sales
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

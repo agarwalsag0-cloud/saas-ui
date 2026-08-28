@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSFlow Multi-Business Platform - Landing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#404758",
+                      "surface-tint": "#4e44e2",
+                      "tertiary-fixed": "#e1e3e4",
+                      "background": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#5c6274",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "on-surface-variant": "#464555",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "tertiary-container": "#67696a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#575e70",
+                      "outline-variant": "#c7c4d8",
+                      "on-secondary-fixed": "#141b2b",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d9dff5",
+                      "inverse-surface": "#2a313d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "on-tertiary-container": "#e8e9ea",
+                      "on-background": "#151c27",
+                      "surface-container": "#e7eefe",
+                      "on-primary-container": "#e9e5ff",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "tertiary": "#4e5152",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e2dfff",
+                      "primary": "#3e32d3",
+                      "on-surface": "#151c27",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-dim": "#d3daea",
+                      "inverse-primary": "#c3c0ff",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-fixed": "#dce2f7",
+                      "surface-container-high": "#e2e8f8",
+                      "on-tertiary-fixed": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#777587",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-variant": "#dce2f3",
+                      "primary-container": "#5850ec",
+                      "on-primary-fixed-variant": "#3424ca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "48px",
+                      "lg": "24px",
+                      "max-width": "1440px",
+                      "3xl": "64px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .custom-shadow-soft { box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 1px 2px rgba(0,0,0,0.06); }
+        .custom-shadow-ambient { box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -2px rgba(0,0,0,0.05); }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container-lowest text-primary dark:text-inverse-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant flat no shadows">
+<div class="flex justify-between items-center px-lg h-16 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-xl">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">SaaSFlow</span>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Discovery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Directory</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-md relative">
+<!-- Dropdown Trigger -->
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md flex items-center gap-xs" id="loginDropdownBtn">
+                    Sign In
+                    <span class="material-symbols-outlined" style="font-size: 16px;">expand_more</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute top-full right-0 mt-sm w-48 bg-surface-container-lowest border border-outline-variant rounded-lg custom-shadow-ambient z-50" id="loginDropdownMenu">
+<a class="block px-md py-sm text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm rounded-t-lg" href="#">Customer Login</a>
+<a class="block px-md py-sm text-on-surface hover:bg-surface-container-low transition-colors font-body-sm text-body-sm rounded-b-lg border-t border-outline-variant" href="#">Business / Admin Login</a>
+</div>
+<a class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="#">Register</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-3xl pb-2xl px-lg lg:px-margin-desktop max-w-max-width mx-auto flex flex-col items-center text-center">
+<div class="absolute inset-0 bg-surface-container-low -z-10 rounded-b-3xl opacity-50"></div>
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg text-on-surface max-w-3xl mb-lg">
+            The All-in-One Engine for Modern Businesses
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-xl">
+            Streamline your operations, discover new partners, and scale your growth with SaaSFlow's comprehensive platform.
+        </p>
+<!-- Search Bar -->
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-full p-sm custom-shadow-soft border border-outline-variant flex items-center focus-within:border-primary focus-within:ring-2 focus-within:ring-primary-container transition-all">
+<span class="material-symbols-outlined text-outline ml-md mr-sm">search</span>
+<input class="flex-grow bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-outline py-sm" placeholder="Search businesses, services, or categories..." type="text"/>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:bg-primary-container transition-colors ml-sm">Search</button>
+</div>
+</header>
+<!-- Popular Categories -->
+<section class="py-2xl px-lg lg:px-margin-desktop max-w-max-width mx-auto">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-lg text-center">Popular Categories</h2>
+<div class="flex flex-wrap justify-center gap-md">
+<!-- Category Pills -->
+<button class="flex items-center gap-sm px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-colors text-on-surface-variant font-label-md text-label-md custom-shadow-soft">
+<span class="material-symbols-outlined" style="font-size: 18px;">storefront</span>
+                Retail
+            </button>
+<button class="flex items-center gap-sm px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-colors text-on-surface-variant font-label-md text-label-md custom-shadow-soft">
+<span class="material-symbols-outlined" style="font-size: 18px;">restaurant</span>
+                Hospitality
+            </button>
+<button class="flex items-center gap-sm px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-colors text-on-surface-variant font-label-md text-label-md custom-shadow-soft">
+<span class="material-symbols-outlined" style="font-size: 18px;">computer</span>
+                Technology
+            </button>
+<button class="flex items-center gap-sm px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-colors text-on-surface-variant font-label-md text-label-md custom-shadow-soft">
+<span class="material-symbols-outlined" style="font-size: 18px;">local_shipping</span>
+                Logistics
+            </button>
+<button class="flex items-center gap-sm px-md py-sm rounded-full border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-colors text-on-surface-variant font-label-md text-label-md custom-shadow-soft">
+<span class="material-symbols-outlined" style="font-size: 18px;">account_balance</span>
+                Finance
+            </button>
+</div>
+</section>
+<!-- Featured Businesses Bento Grid -->
+<section class="py-2xl px-lg lg:px-margin-desktop max-w-max-width mx-auto bg-surface-container-low rounded-3xl my-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xl text-center">Featured Businesses</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Large Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl custom-shadow-soft border border-outline-variant overflow-hidden group hover:border-primary transition-colors">
+<div class="bg-cover bg-center w-full h-48" data-alt="A brightly lit, modern tech office space featuring sleek white desks, ergonomic chairs, and large windows revealing a cityscape. The lighting is high-key natural light creating a clean, professional aesthetic. Corporate minimalist style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmCLtWwSQtf1Q2aeB0sGo9z5cBPGWYaq5gEuRVCA6ptnrT-XZs40rELZg-_AsRjwrFgEA-H3xYsU822_zcHl8LbQTIgTLinC3NquKkFmsbVejRUdF7Ff2Gdfm8pupW-0vrNANQRtU6PxTwvQXEnd66mMQ9CjTtzEQQStS2DoqE7FTjRrbclh8bCjls-YEBjQfIIKYkev6vMAdZDt7aeFCoCIornW2lOx3h6FHSf8VI1BPN3D2ryWg0')"></div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">TechNova Solutions</h3>
+<span class="bg-primary-container/10 text-primary-fixed-dim px-sm py-xs rounded-full font-label-sm text-label-sm">Technology</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Leading provider of cloud infrastructure and enterprise software solutions for modern businesses scaling globally.</p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline" href="#">
+                        View Profile <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Standard Cards -->
+<div class="bg-surface-container-lowest rounded-xl custom-shadow-soft border border-outline-variant overflow-hidden group hover:border-primary transition-colors">
+<div class="p-lg flex flex-col h-full">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">GreenLeaf Logistics</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Sustainable, electric-fleet delivery services for urban retail environments.</p>
+<div class="flex items-center gap-xs text-outline mb-md">
+<span class="material-symbols-outlined" style="font-size: 14px;">location_on</span>
+<span class="font-body-sm text-body-sm">San Francisco, CA</span>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline mt-auto" href="#">
+                        View Profile <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl custom-shadow-soft border border-outline-variant overflow-hidden group hover:border-primary transition-colors">
+<div class="p-lg flex flex-col h-full">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Artisan Roasters</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-grow">Wholesale specialty coffee roasters supplying premium cafes and corporate offices.</p>
+<div class="flex items-center gap-xs text-outline mb-md">
+<span class="material-symbols-outlined" style="font-size: 14px;">star</span>
+<span class="font-body-sm text-body-sm">4.9 (120 reviews)</span>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline mt-auto" href="#">
+                        View Profile <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl custom-shadow-soft border border-outline-variant overflow-hidden group hover:border-primary transition-colors flex flex-col md:flex-row">
+<div class="bg-cover bg-center w-full md:w-1/3 h-48 md:h-auto" data-alt="A modern, minimalist retail storefront exterior with large glass windows, clean white signage, and subtle architectural lighting. The environment feels upscale and pristine, reflecting a premium corporate identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzGpUj2xohAuDCnKxLSgOkAPMgkxLwOnDMr4LBYFrjVoaTVnz-K0WtVGZHu0tccythZeHT8fxctXstN9nAzo16cI06Zmnx6IWK9-ctxkNUqF8GQZd_b3-XVQ9G5P-qG4MR5o8FpxHoGMV_d3QeFBJCn2pOzZv0qYGhW9iPuxx-1Ma95Q9s5RmsfIiKa9ELJnD9etkCs_D3cfQexx5Kgl-o0RzkwLhrlt0i_uvdDsx6ACQzvjdL2tqQ')"></div>
+<div class="p-lg md:w-2/3 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Elevate Retail Space</h3>
+<span class="bg-secondary-container/30 text-secondary px-sm py-xs rounded-full font-label-sm text-label-sm">Retail</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Curated commercial real estate leasing for premium boutique brands seeking high-footfall locations.</p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline" href="#">
+                        View Profile <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works / CTA -->
+<section class="py-2xl px-lg lg:px-margin-desktop max-w-max-width mx-auto flex flex-col lg:flex-row gap-xl items-center">
+<div class="lg:w-1/2">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Grow Your Business on SaaSFlow</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Join thousands of modern enterprises using our platform to connect, manage, and scale.</p>
+<ul class="space-y-md mb-xl">
+<li class="flex items-start gap-md">
+<div class="bg-primary-container/10 text-primary-fixed p-sm rounded-full mt-xs">
+<span class="material-symbols-outlined" style="font-size: 20px;">person_add</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">1. Create a Profile</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set up your business identity in minutes.</p>
+</div>
+</li>
+<li class="flex items-start gap-md">
+<div class="bg-primary-container/10 text-primary-fixed p-sm rounded-full mt-xs">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">2. Get Discovered</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Appear in our global directory and search results.</p>
+</div>
+</li>
+<li class="flex items-start gap-md">
+<div class="bg-primary-container/10 text-primary-fixed p-sm rounded-full mt-xs">
+<span class="material-symbols-outlined" style="font-size: 20px;">trending_up</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">3. Manage &amp; Scale</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Use our admin tools to handle inquiries and grow.</p>
+</div>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-title-md text-title-md hover:bg-primary-container transition-colors custom-shadow-soft">Register Your Business</button>
+</div>
+<div class="lg:w-1/2 w-full h-96 bg-surface-container-highest rounded-2xl overflow-hidden relative border border-outline-variant">
+<div class="bg-cover bg-center w-full h-full" data-alt="A clean, abstract 3D rendering representing business growth and connectivity. Geometric shapes in deep slate and bright electric indigo intertwining in a bright, modern light-mode environment. Soft, ambient shadows create depth and a premium corporate feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDq-yhO2_T3Ma_S8o_tLkrV3HP0kzXch0e9GteIHQcotQkoyulZyDIvJLqBt1QtKHeGuD9meX7n5ExdY4cITz7Y1pLUgboGmneeFHfrkPsWWmrfOC43tU8zyyOP_gwPlPd7z_AWgFvjH7Ntv6aIg8MUr3YMY4Gk3FGrAjctFOWh2H75GhEFPC4BVsfWLR2PF3DLkmd93ttgEVmNE94gne_uSxhLNdIIy_S-9AsHt6bEnOgK5EZ7o2Wj')"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-on-background text-on-surface font-body-sm text-body-sm full-width bottom-0 border-t border-outline-variant flat no shadows mt-3xl">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto gap-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">SaaSFlow</span>
+<div class="flex gap-md flex-wrap justify-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Cookie Settings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Contact Support</a>
+</div>
+<span class="text-on-surface-variant text-center md:text-right">© 2024 SaaSFlow Multi-Business Platform. All rights reserved.</span>
+</div>
+</footer>
+<script>
+        // Simple Dropdown Logic
+        const loginBtn = document.getElementById('loginDropdownBtn');
+        const loginMenu = document.getElementById('loginDropdownMenu');
+
+        loginBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            loginMenu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!loginMenu.contains(e.target) && e.target !== loginBtn) {
+                loginMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body></html>
