@@ -12,11 +12,11 @@
 
 ## Credential and role flow
 
-- `database/install.sql` creates structure and the central feature registry; it does not force a default Super Admin credential.
+- `database/mbsp_database.sql` is the single phpMyAdmin import for a test-ready install: it concatenates the schema/registry (`install.sql` content) with demo tenant/customer content. `database/install.sql` remains the schema-only source of truth (used by the `testing/` harness) and never forces a default Super Admin credential.
 - `/setup` creates the first Super Admin when no Super Admin exists.
 - Super Admin can create business owners from `/admin/businesses/create`.
 - `/register-business` lets a new business owner set credentials and optionally select a preferred active plan during registration; the business and selected subscription remain pending until approval/activation.
-- Optional `database/demo_seed.sql` creates demo users and sample configurable plans only for local testing.
+- `database/demo_seed.sql` is the older standalone seed kept for reference; its adapted content lives inside `mbsp_database.sql` (with no `super_admin` row and no dangling references).
 
 ## Role separation
 

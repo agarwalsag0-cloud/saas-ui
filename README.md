@@ -71,11 +71,12 @@ multi-business-subscription-platform/
 │   ├── Services/        # Feature access, upload, subscription logic, notifications, activity, slugs
 │   └── Views/           # Layouts and page templates
 ├── database/
-│   ├── install.sql                    # Required database structure + default feature registry
+│   ├── mbsp_database.sql              # ★ SINGLE-FILE IMPORT: schema + registry + demo content (phpMyAdmin)
+├── install.sql                    # Schema + feature registry only (used by the test harness)
 │   ├── update_public_website.sql       # Patch only if an older install was already imported
 │   ├── update_feature_based_plans.sql  # One-time patch for older installs to add feature registry/plan pivot
 │   ├── fix_existing_database_after_updates.sql # Safe repair script if old DB causes 500 after code update
-│   └── demo_seed.sql                  # Optional demo/test data with sample configurable plans
+│   ├── demo_seed.sql                  # Older standalone demo data (kept for reference; already inside mbsp_database.sql)
 ├── public/
 │   ├── index.php        # Front controller
 │   ├── assets/          # CSS/JS
@@ -115,9 +116,9 @@ Open XAMPP Control Panel and start:
    - Collation: `utf8mb4_unicode_ci`
 4. Select the database.
 5. Go to **Import**.
-6. Import `database/install.sql`.
+6. Import `database/mbsp_database.sql` (the single file — schema + registry + demo content).
 
-That is the only required SQL file for a fresh setup. It creates the structure and central feature registry, but does not force Super Admin credentials or fixed subscription packages. `database/demo_seed.sql` is optional and only for sample/testing data. Skip it if you want to create every credential and plan yourself.
+That is the only import a fresh setup needs. It deliberately contains **no Super Admin row** — you create that on `/setup` from the browser. If you want schema without demo content (production), import `database/install.sql` alone instead. The older `demo_seed.sql` and `update_*.sql` files remain for reference and for upgrading databases created before this consolidation.
 
 If you already imported an older copy of `install.sql`, use the patch files instead of recreating the database:
 
@@ -169,7 +170,7 @@ http://localhost/multi-business-subscription-platform
 
 ## Demo credentials
 
-If you optionally imported `database/demo_seed.sql`, all demo passwords are:
+After importing `database/mbsp_database.sql`, all demo passwords are (business portal via `/business/login`):
 
 ```text
 password
@@ -211,7 +212,7 @@ The script prompts for name, email and password and stores the password securely
 - First Super Admin is created by you from `/setup` or the CLI script.
 - Super Admin can create businesses and owner credentials from `/admin/businesses/create`.
 - Public business registration is available at `/register-business`; the owner sets their own password and can optionally choose a preferred subscription plan. The business remains `pending`, and the selected plan remains pending until Super Admin approves/activates it.
-- Optional `demo_seed.sql` is only for testing and can be skipped.
+- `mbsp_database.sql` is the only import needed for a full test environment; `install.sql` stays as the schema-only reference used by `testing/`.
 
 ## Major modules
 

@@ -48,3 +48,10 @@ Requires a run on XAMPP/MySQL (per docs/TESTING.md): full schema import + `datab
 - Registration ≠ approval: `SubscriptionService::canManageContent()` lets pending tenants build profiles/listings/website while `canUsePortal()` still gates publishing; publish additionally hard-requires Super Admin approval (S13). Account status, approval, subscription, features, website publish, directory visibility and indexability remain seven independent server-side concepts.
 - Sessions: HttpOnly+SameSite=Lax cookies, regenerate on login/logout, idle expiry via `SESSION_IDLE_MINUTES` (default 120), intended-URL resume after sign-in.
 - New executable verification: `testing/` SQLite harness (real controllers/guards/views, fixtures derived from install.sql) — 26 scenarios covering the entire requirement-17 matrix, all passing; `php testing/run_tests.php` reproduces it on XAMPP.
+
+## Current round (single-database import) — COMPLETE
+
+- New `database/mbsp_database.sql`: the ONE file to import in phpMyAdmin — full schema + feature registry (kept byte-identical to `install.sql`) + adapted demo seed. Every INSERT column list was statically validated against the schema.
+- Deliberate changes vs the old demo_seed.sql: no `super_admin` user row and no `recorded_by/actor` references to a pre-created admin id (per the no-hardcoded-admin constraint); added platform `customer_accounts` (2 logins) linked to existing enquiries/orders via `customer_account_id`; added a staff user (role separation test), a 6th tenant in `rejected` state with review note (login-block + rejection-visibility tests), a customer-facing notification (bell in the customer portal), and mixed `business_settings` publish states (published+indexable vs configured-unpublished) to drive the Publish workflow test.
+- `install.sql` remains the schema source of truth for `testing/setup_db.php`; `demo_seed.sql` and the `update_*.sql` patch files stay for reference/upgrades of pre-existing databases. README, docs/TESTING.md, docs/ARCHITECTURE.md now point at the single file.
+- Verified: automated harness still ALL PASS (26 scenarios) with the untouched install.sql; no app PHP changed this round.

@@ -1,6 +1,6 @@
 # Testing Checklist
 
-Use this checklist after importing `database/install.sql`. If you want ready-made sample records and sample configurable plans, also import optional `database/demo_seed.sql`.
+Use this checklist after importing `database/mbsp_database.sql` (one file: schema + registry + demo content; tenant states, publish states, staff and customer logins included — see its header comment).
 
 ## Initial setup
 
@@ -151,7 +151,7 @@ php -l app/Controllers/Admin/PlanController.php
 php -l app/Controllers/Admin/FeatureController.php
 ```
 
-Also import `database/install.sql` into a new phpMyAdmin database and optionally import `database/demo_seed.sql` to verify SQL compatibility.
+Also import `database/mbsp_database.sql` into a new phpMyAdmin database to verify SQL compatibility (it is the same schema the harness translates, plus demo content).
 
 ## Responsive UI
 
