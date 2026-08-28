@@ -3,6 +3,3 @@
 /public/uploads/businesses/*
 !.gitkeep
 
-# Design references (local only)
-stitch_multi_biz_saas_portal/
-*.zip
