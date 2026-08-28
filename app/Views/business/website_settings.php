@@ -71,8 +71,10 @@ $isEnabledByAdmin = ($websiteAccess['enabled_by_admin'] ?? true) !== false;
 <?php if (!$isEnabledByAdmin): ?>
     <div class="alert warning"><strong>Website disabled by Super Admin.</strong>&nbsp; Your public page stays offline even when published, until the platform re-enables it.</div>
 <?php endif; ?>
-<?php if (empty($websiteAccess['portal_usable'])): ?>
-    <div class="alert danger"><strong>Subscription restricted.</strong>&nbsp; Publishing changes require an active subscription. <a href="<?= e(url('/business/subscription')) ?>">View subscription</a></div>
+<?php if (empty($websiteAccess['content_usable'])): ?>
+    <div class="alert danger"><strong>Subscription restricted.</strong>&nbsp; An active subscription is required to manage this website. <a href="<?= e(url('/business/subscription')) ?>">View subscription</a></div>
+<?php elseif (empty($websiteAccess['portal_usable'])): ?>
+    <div class="alert info"><strong>Setup mode — approval pending.</strong>&nbsp; You can keep preparing content, styling and previewing your website. Publishing unlocks automatically once the platform approves your business (current status: <?= e(str_replace('_', ' ', (string)($business['status'] ?? 'pending'))) ?>).</div>
 <?php endif; ?>
 
 <form method="post" action="<?= e(url('/business/website')) ?>" enctype="multipart/form-data" class="grid grid-2">

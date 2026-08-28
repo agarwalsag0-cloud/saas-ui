@@ -24,14 +24,34 @@ If you imported `demo_seed.sql`, you can also test with:
 - Confirm the owner can log in but sees restricted/pending access until approval.
 - Login as Super Admin, approve/activate the business and activate the selected subscription or assign another plan.
 
-## Auth
+## Auth — entry points & separation
 
-- Login Super Admin.
-- Logout.
-- Login business owner.
-- Logout.
+The platform exposes three independent sign-in doors; they are never interchangeable:
+
+| Entry | URL | Accepted identities | Post-login landing |
+|---|---|---|---|
+| Public chooser | `/login` | — (links only) | — |
+| Customer | `/customer/login` (+ `/auth/google/*`) | `customer_accounts` only | `/customer` (or the page that required login) |
+| Business | `/business/login` | `business_owner`, `business_staff` | `/business` |
+| Super Admin | `/admin/login` | `super_admin` only | `/admin` |
+
+- The `/login` chooser offers only **Customer** and **Business**. No public page, nav, footer or error screen links the admin entry.
+- Same credentials must NOT work across doors: try the admin account on `/business/login` and a business owner on `/admin/login` — both must fail with the generic *"Invalid email or password."*
+- First run: `/setup` is reachable only while no Super Admin exists; after creation it redirects to `/admin/login` forever.
+- Failed admin sign-ins lock the portal for 10 minutes after 5 attempts (per session); business login throttles identically.
+- Idle sessions expire after `SESSION_IDLE_MINUTES` (default 120) and the user is told to sign in again.
+- Session IDs regenerate on login and logout; logging out of `/admin/login` sends admins back to the admin entry, everyone else to `/login`.
 - Attempt invalid password and confirm generic validation message.
-- Confirm passwords are stored as hashes in `users.password_hash`, never plain text.
+- Confirm passwords are stored as hashes in `users.password_hash` / `customer_accounts.password_hash`, never plain text.
+
+### Automated security suite (no MySQL needed)
+
+```
+php testing/setup_db.php
+php testing/run_tests.php
+```
+
+All 26 scenarios must print `ALL PASS (26)`. The suite exercises the real guards: portal cross-access (customer→business, business→admin, anon→everything), tenant isolation by ID/URL/POST manipulation, feature-lock direct URLs, expired-subscription write blocking, pending/rejected/suspended public visibility, pending publish attempts, session tampering, logout invalidation, the real admin login flow, and full render smoke passes for every portal. See `testing/README.md`.
 
 ## Super Admin
 

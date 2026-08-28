@@ -74,7 +74,13 @@ class Auth
         return in_array(self::role(), ['business_owner', 'business_staff'], true);
     }
 
-    public static function attempt(string $email, string $password, ?string &$error = null): bool
+    /**
+     * Attempt login. When $allowedRoles is provided, users whose DB role is
+     * not in the list are rejected — this keeps Business Portal, Super Admin
+     * and any future portal credentials from being interchangeable, even
+     * against the same `users` table row.
+     */
+    public static function attempt(string $email, string $password, ?string &$error = null, ?array $allowedRoles = null): bool
     {
         $stmt = Database::pdo()->prepare(
             'SELECT u.*, b.status AS business_status
@@ -93,6 +99,12 @@ class Auth
 
         if ($user['status'] !== 'active') {
             $error = 'This user account is not active.';
+            return false;
+        }
+
+        if ($allowedRoles !== null && !in_array($user['role'], $allowedRoles, true)) {
+            // Deliberately generic: never reveal which portal a role belongs to.
+            $error = 'Invalid email or password.';
             return false;
         }
 
@@ -120,14 +132,23 @@ class Auth
     public static function requireLogin(): void
     {
         if (!self::check()) {
+            self::rememberIntended();
             Flash::warning('Please log in to continue.');
             redirect('/login');
         }
     }
 
+    /**
+     * Admin pages must never bounce through the public login chooser:
+     * unauthenticated visitors go straight to the protected admin login.
+     */
     public static function requireSuperAdmin(): void
     {
-        self::requireLogin();
+        if (!self::check()) {
+            self::rememberIntended();
+            Flash::warning('Please sign in to the admin portal to continue.');
+            redirect('/admin/login');
+        }
         if (!self::isSuperAdmin()) {
             throw new HttpException(403);
         }
@@ -135,10 +156,38 @@ class Auth
 
     public static function requireBusinessUser(): void
     {
-        self::requireLogin();
+        if (!self::check()) {
+            self::rememberIntended();
+            Flash::warning('Please sign in to the business portal to continue.');
+            redirect('/business/login');
+        }
         if (!self::isBusinessUser()) {
             throw new HttpException(403);
         }
+    }
+
+    /**
+     * Remember the requested URL (only paths inside the portal being gated)
+     * so a successful sign-in can return the user there. Never trusts the
+     * value later: it is re-validated against the role after login.
+     */
+    public static function rememberIntended(): void
+    {
+        $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
+        $path = (string) parse_url($uri, PHP_URL_PATH);
+        if ($path !== '' && str_starts_with($path, '/')) {
+            $_SESSION['_intended'] = $path;
+        }
+    }
+
+    public static function consumeIntended(string $prefix): ?string
+    {
+        $path = (string) ($_SESSION['_intended'] ?? '');
+        unset($_SESSION['_intended']);
+        if ($path !== '' && str_starts_with($path, $prefix) && !str_contains($path, "\\")) {
+            return $path;
+        }
+        return null;
     }
 
     public static function redirectPath(): string

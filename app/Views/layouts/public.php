@@ -16,14 +16,13 @@
         <span>Multi-Business Platform</span>
     </a>
     <div class="actions">
-        <a class="btn btn-outline btn-sm" href="<?= e(url('/')) ?>"><?= icon('search') ?> Directory</a>
-        <a class="btn btn-outline btn-sm" href="<?= e(url('/register-business')) ?>"><?= icon('storefront') ?> Register Business</a>
+        <a class="btn btn-ghost btn-sm" href="<?= e(url('/')) ?>"><?= icon('search') ?> Directory</a>
         <?php if (\App\Core\CustomerAuth::check()): ?>
             <a class="btn btn-outline btn-sm" href="<?= e(url('/customer')) ?>"><?= icon('person') ?> My Account</a>
         <?php else: ?>
-            <a class="btn btn-outline btn-sm" href="<?= e(url('/customer/login')) ?>"><?= icon('person') ?> Customer Login</a>
+            <a class="btn btn-ghost btn-sm" href="<?= e(url('/login')) ?>"><?= icon('person') ?> Log in</a>
         <?php endif; ?>
-        <a class="btn btn-primary btn-sm" href="<?= e(url('/login')) ?>"><?= icon('lock') ?> Portal Login</a>
+        <a class="btn btn-primary btn-sm" href="<?= e(url('/register-business')) ?>"><?= icon('storefront') ?> List your business</a>
     </div>
 </nav>
 <main class="public-main">

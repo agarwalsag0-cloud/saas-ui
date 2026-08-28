@@ -5,7 +5,7 @@
         <p>Every listing below is an approved tenant with an active subscription and a published website. Browse catalogs and offers, then contact the business directly — or save everything to your customer account.</p>
         <div class="actions" style="margin-top:14px;">
             <a class="btn btn-primary" href="<?= e(url('/register-business')) ?>">Register your business</a>
-            <a class="btn btn-outline" href="<?= e(url('/customer/login')) ?>">Customer sign in</a>
+            <a class="btn btn-ghost" href="<?= e(url('/login')) ?>">Sign in</a>
         </div>
     </div>
 </section>

@@ -18,8 +18,8 @@ class SetupController extends Controller
     public function show(): void
     {
         if ($this->superAdminExists()) {
-            Flash::info('Initial Super Admin already exists. Please log in.');
-            $this->redirect('/login');
+            Flash::info('Initial Super Admin already exists. Sign in at the admin portal entry.');
+            $this->redirect('/admin/login');
         }
 
         $this->render('auth.setup', [
@@ -34,7 +34,7 @@ class SetupController extends Controller
 
         if ($this->superAdminExists()) {
             Flash::warning('Initial setup is already complete.');
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
 
         $validator = (new Validator())

@@ -40,3 +40,11 @@ All gaps above are implemented. Verified statically in the sandbox (no MySQL ava
 - `changes_requested`/`rejected` now clear `approved_at` so re-approval is required; `review_note` is stored and surfaced in the admin business page + notification.
 
 Requires a run on XAMPP/MySQL (per docs/TESTING.md): full schema import + `database/update_2026_08_customer_portal_and_website_workflow.sql` on existing installs, then the publish/review and customer-portal checklists. Google login additionally needs `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` in `.env` (copy `.env.example`); the Google button is hidden until configured — no fake auth fallbacks exist.
+
+## Auth architecture rebuild (login separation round)
+
+- Three isolated doors: `/login` chooser (Customer|Business only), `/business/login` (business roles), `/admin/login` (super_admin only, unlinked from public UI, rate-limited, self-locking `/setup`). Customers use the separate `customer_accounts` store; a Google-created customer can never obtain tenant access (proven by S22).
+- `Auth::attempt` now filters by role list per door; portal guards re-resolve role/tenant/status from the database every request (session payload is only an id), so session tampering fails closed (S15).
+- Registration ≠ approval: `SubscriptionService::canManageContent()` lets pending tenants build profiles/listings/website while `canUsePortal()` still gates publishing; publish additionally hard-requires Super Admin approval (S13). Account status, approval, subscription, features, website publish, directory visibility and indexability remain seven independent server-side concepts.
+- Sessions: HttpOnly+SameSite=Lax cookies, regenerate on login/logout, idle expiry via `SESSION_IDLE_MINUTES` (default 120), intended-URL resume after sign-in.
+- New executable verification: `testing/` SQLite harness (real controllers/guards/views, fixtures derived from install.sql) — 26 scenarios covering the entire requirement-17 matrix, all passing; `php testing/run_tests.php` reproduces it on XAMPP.

@@ -5,7 +5,7 @@
             <h1 class="page-title">Register your business</h1>
             <p class="page-description">Your owner login will be created now. Choose a preferred plan if available; Super Admin must approve and activate the subscription before paid features unlock.</p>
         </div>
-        <a class="btn btn-outline" href="<?= e(url('/login')) ?>">Already registered? Login</a>
+        <a class="btn btn-outline" href="<?= e(url('/business/login')) ?>">Already registered? Business sign-in</a>
     </div>
 
     <form method="post" action="<?= e(url('/register-business')) ?>" class="grid grid-2">

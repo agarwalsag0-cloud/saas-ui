@@ -121,7 +121,7 @@ class FeatureService
             return self::$businessFeatureCache[$cacheKey];
         }
 
-        if (!SubscriptionService::canUsePortal($business, $subscription) || empty($subscription['plan_id'])) {
+        if (!SubscriptionService::canManageContent($business, $subscription) || empty($subscription['plan_id'])) {
             self::$businessFeatureCache[$cacheKey] = [];
             return [];
         }

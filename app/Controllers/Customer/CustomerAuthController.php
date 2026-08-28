@@ -133,7 +133,7 @@ class CustomerAuthController extends Controller
 
         CustomerAuth::attempt((int) $account['id']);
         Flash::success('Welcome back, ' . $account['name'] . '.');
-        $this->redirect('/customer');
+        $this->redirect(CustomerAuth::consumeIntended());
     }
 
     public function logout(): void
@@ -238,7 +238,7 @@ class CustomerAuthController extends Controller
 
         CustomerAuth::attempt((int) $account['id']);
         Flash::success('Signed in with Google.');
-        $this->redirect('/customer');
+        $this->redirect(CustomerAuth::consumeIntended());
     }
 
     private function redirect_external(string $url): void

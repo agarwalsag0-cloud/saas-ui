@@ -2,6 +2,14 @@
 
 A production-minded PHP + MySQL SaaS foundation for running many independent business portals under one central platform. It is designed for local XAMPP development, phpMyAdmin database import, and continued development in VS Code.
 
+### Login & access model
+
+- `/login` — public chooser: **Customer** or **Business** (never shows Super Admin).
+- `/customer/login`, `/customer/register` — self-service customer accounts (Google sign-in when `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` are configured; no approval required, separate `customer_accounts` store).
+- `/business/login` — tenant staff only; sessions bind to the user's `business_id`, every business query is tenant-scoped server-side.
+- `/admin/login` — Super Admin only; deliberately not linked from any public page; rate-limited; created once through `/setup` which then locks itself.
+- Customers, business users and admins can never sign in to each other's portals even with correct passwords (role-checked at `Auth::attempt`), and portal guards re-verify role + tenant from the database on every request.
+
 ## What is included
 
 - Super Admin portal

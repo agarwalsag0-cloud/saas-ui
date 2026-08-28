@@ -61,7 +61,7 @@ class CustomerAuth
 
     public static function attempt(int $accountId): void
     {
-        if (PHP_SAPI !== 'cli') {
+        if (!in_array(PHP_SAPI, ['cli', 'php', 'wasm'], true)) {
             session_regenerate_id(true);
         }
         $_SESSION['customer_account_id'] = $accountId;
@@ -72,9 +72,21 @@ class CustomerAuth
         $update->execute([$accountId]);
     }
 
+    /** After sign-in, return the customer to the page that required login (only /customer paths). */
+    public static function consumeIntended(): string
+    {
+        $path = (string) ($_SESSION['_intended'] ?? '');
+        unset($_SESSION['_intended']);
+        if ($path !== '' && str_starts_with($path, '/customer') && !str_contains($path, "\\")) {
+            return $path;
+        }
+        return '/customer';
+    }
+
     public static function requireLogin(): void
     {
         if (!self::check()) {
+            Auth::rememberIntended();
             Flash::warning('Please log in to your customer account to continue.');
             redirect('/customer/login');
         }
@@ -84,7 +96,7 @@ class CustomerAuth
     {
         self::$cachedCustomer = false;
         unset($_SESSION['customer_account_id']);
-        if ($regenerate && PHP_SAPI !== 'cli' && session_status() === PHP_SESSION_ACTIVE) {
+        if ($regenerate && !in_array(PHP_SAPI, ['cli', 'php', 'wasm'], true) && session_status() === PHP_SESSION_ACTIVE) {
             session_regenerate_id(true);
         }
     }

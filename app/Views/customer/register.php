@@ -41,5 +41,5 @@
 
 <div class="auth-links">
     <span>Already registered? <a href="<?= e(url('/customer/login')) ?>">Sign in</a></span>
-    <span>Looking for the business portal? <a href="<?= e(url('/login')) ?>">Portal login</a></span>
+    <span>Looking for the business portal? <a href="<?= e(url('/business/login')) ?>">Business portal login</a></span>
 </div>

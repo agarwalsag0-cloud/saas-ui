@@ -3,3 +3,5 @@
 /public/uploads/businesses/*
 !.gitkeep
 
+storage/testing.sqlite
+storage/testing_manifest.json

@@ -56,7 +56,7 @@ function e($value): string
 
 function base_url_path(): string
 {
-    if (PHP_SAPI === 'cli') {
+    if (in_array(PHP_SAPI, ['cli', 'php', 'wasm'], true)) {
         return '';
     }
 
@@ -116,6 +116,12 @@ function clear_old_input(): void
 
 function redirect(string $path): void
 {
+    if (in_array(PHP_SAPI, ['cli', 'php', 'wasm'], true)) {
+        // Console harnesses / tests cannot observe header(); make the
+        // redirect explicit so CLI runs exercise the same code paths.
+        fwrite(defined('STDOUT') ? STDOUT : fopen('php://stdout', 'w'), "\n[redirect] " . $path . "\n");
+        exit;
+    }
     header('Location: ' . url($path));
     exit;
 }

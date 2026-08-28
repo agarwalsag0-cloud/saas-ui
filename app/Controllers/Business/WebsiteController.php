@@ -99,6 +99,14 @@ class WebsiteController extends BaseBusinessController
         $businessId = $this->tenantId();
 
         $access = \App\Services\WebsiteAccessService::evaluate($this->business, $this->subscription, $this->rawSettings());
+
+        // Publishing is gated by approval, never by content access: pending
+        // businesses can prepare everything but must wait for the platform.
+        if (!$access['business_approved']) {
+            Flash::error('Your business is awaiting Super Admin approval. You can keep preparing your website, but publishing unlocks once the business is approved.');
+            $this->redirect('/business/website');
+        }
+
         if (!$access['portal_usable']) {
             Flash::error('Your subscription or business status must be active before publishing.');
             $this->redirect('/business/website');

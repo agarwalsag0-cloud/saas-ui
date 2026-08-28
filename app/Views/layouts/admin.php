@@ -3,7 +3,7 @@ $active = $active ?? '';
 $adminUser = $adminUser ?? [];
 $adminUnreadNotifications = $adminUnreadNotifications ?? 0;
 $adminReviewQueueCount = $adminReviewQueueCount ?? 0;
-function admin_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; }
+if (!function_exists('admin_nav_active')) { function admin_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; } }
 ?>
 <!doctype html>
 <html lang="en">

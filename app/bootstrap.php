@@ -37,7 +37,7 @@ ini_set('display_errors', $appDebug ? '1' : '0');
 ini_set('display_startup_errors', $appDebug ? '1' : '0');
 error_reporting(E_ALL);
 
-if ((PHP_SAPI !== 'cli' || Config::bool('MBSP_CLI_SESSIONS', false)) && session_status() === PHP_SESSION_NONE) {
+if ((!in_array(PHP_SAPI, ['cli', 'php', 'wasm'], true) || Config::bool('MBSP_CLI_SESSIONS', false)) && session_status() === PHP_SESSION_NONE) {
     $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
     session_set_cookie_params([
         'lifetime' => 0,
@@ -49,4 +49,17 @@ if ((PHP_SAPI !== 'cli' || Config::bool('MBSP_CLI_SESSIONS', false)) && session_
     ]);
     session_name(Config::get('SESSION_NAME', 'MBSPSESSID'));
     session_start();
+
+    // Session validity: idle expiry for authenticated portals. Activity is
+    // stamped on every request; when the window is exceeded all identity keys
+    // are dropped so guards treat the visitor as logged out.
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        $idleSeconds = max(300, ((int) Config::get('SESSION_IDLE_MINUTES', '120')) * 60);
+        $last = isset($_SESSION['_last_activity']) ? (int) $_SESSION['_last_activity'] : null;
+        if ($last !== null && (time() - $last) > $idleSeconds && (isset($_SESSION['user_id']) || isset($_SESSION['customer_account_id']))) {
+            unset($_SESSION['user_id'], $_SESSION['role'], $_SESSION['business_id'], $_SESSION['customer_account_id'], $_SESSION['_intended']);
+            \App\Core\Flash::warning('Your session expired after inactivity. Please sign in again.');
+        }
+        $_SESSION['_last_activity'] = time();
+    }
 }

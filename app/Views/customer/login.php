@@ -32,6 +32,6 @@
 
 <div class="auth-links">
     <span>New here? <a href="<?= e(url('/customer/register')) ?>">Create a customer account</a></span>
-    <span>Business owner or admin? <a href="<?= e(url('/login')) ?>">Portal login</a></span>
+    <span>Business owner or staff? <a href="<?= e(url('/business/login')) ?>">Business portal login</a></span>
     <span><a href="<?= e(url('/')) ?>">← Back to the business directory</a></span>
 </div>

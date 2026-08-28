@@ -2,7 +2,7 @@
 $active = $active ?? '';
 $customer = $customer ?? [];
 $customerUnreadNotifications = $customerUnreadNotifications ?? 0;
-function customer_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; }
+if (!function_exists('customer_nav_active')) { function customer_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; } }
 ?>
 <!doctype html>
 <html lang="en">

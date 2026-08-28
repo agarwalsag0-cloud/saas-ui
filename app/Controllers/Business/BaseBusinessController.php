@@ -41,7 +41,8 @@ abstract class BaseBusinessController extends Controller
         $this->business = $business;
         $this->subscription = SubscriptionService::current($businessId);
         $this->effectiveSubscriptionStatus = SubscriptionService::effectiveStatus($this->business, $this->subscription);
-        $this->portalAllowed = SubscriptionService::canUsePortal($this->business, $this->subscription);
+        // Content management (not public publishing) — pending businesses may prepare content.
+        $this->portalAllowed = SubscriptionService::canManageContent($this->business, $this->subscription);
         $this->featureAccess = FeatureService::featuresForBusiness($businessId, $this->business, $this->subscription);
     }
 

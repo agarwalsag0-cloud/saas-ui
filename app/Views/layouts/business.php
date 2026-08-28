@@ -5,7 +5,7 @@ $featureAccess = $featureAccess ?? [];
 $websiteAccess = $websiteAccess ?? null;
 $canFeature = fn(string $identifier): bool => isset($featureAccess[$identifier]);
 $canAnyFeature = fn(array $identifiers): bool => (bool) array_intersect($identifiers, array_keys($featureAccess));
-function business_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; }
+if (!function_exists('business_nav_active')) { function business_nav_active(string $key, string $active): string { return $key === $active ? 'active' : ''; } }
 ?>
 <!doctype html>
 <html lang="en">

@@ -80,6 +80,7 @@ class WebsiteAccessService
 
         $configured = !empty($settings['_settings_row']);
         $portalUsable = SubscriptionService::canUsePortal($business, $subscription);
+        $contentUsable = SubscriptionService::canManageContent($business, $subscription);
         $planEntitled = isset($featureAccess['public_website']);
         $enabledByAdmin = (int) ($settings['website_enabled'] ?? 1) === 1;
         $businessApproved = in_array((string) ($business['status'] ?? ''), ['approved', 'active'], true);
@@ -93,13 +94,14 @@ class WebsiteAccessService
             'enabled_by_admin' => $enabledByAdmin,
             'business_approved' => $businessApproved,
             'portal_usable' => $portalUsable,
+            'content_usable' => $contentUsable,
             'published' => $published,
             'public_access' => $publicAccess,
             'directory_visible' => $publicAccess && (int) ($settings['show_in_directory'] ?? 1) === 1,
             'indexing_eligible' => $publicAccess
                 && (int) ($settings['allow_indexing'] ?? 1) === 1
                 && (int) ($settings['show_in_directory'] ?? 1) === 1,
-            'preview_available' => $planEntitled && $portalUsable,
+            'preview_available' => $planEntitled && $contentUsable,
             'settings' => $settings,
         ];
     }

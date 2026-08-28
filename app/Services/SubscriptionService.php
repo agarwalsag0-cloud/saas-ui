@@ -79,6 +79,26 @@ class SubscriptionService
         return in_array($status, ['active', 'expiring', 'grace_period', 'trialing'], true);
     }
 
+    /**
+     * Content-management gate (Business Portal writes + plan features).
+     *
+     * Deliberately separate from canUsePortal / approval / publication:
+     * a registered business may prepare its profile, listings and website
+     * while it is still pending or under review — registration is not
+     * approval, but approval is required before anything goes public.
+     * Suspended / deactivated / rejected / archived tenants cannot write.
+     */
+    public static function canManageContent(array $business, ?array $subscription): bool
+    {
+        if (in_array((string) ($business['status'] ?? ''), ['suspended', 'inactive', 'rejected', 'archived'], true)) {
+            return false;
+        }
+
+        // Subscription health only — not short-circuited by business status.
+        $status = self::effectiveStatus(null, $subscription);
+        return in_array($status, ['active', 'expiring', 'grace_period', 'trialing'], true);
+    }
+
     public static function expiringSoon(int $days = 7): array
     {
         $stmt = Database::pdo()->prepare(

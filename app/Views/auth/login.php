@@ -1,27 +1,30 @@
 <div class="auth-logo"><span class="brand-mark">MB</span> Multi-Business Platform</div>
-<h1>Business Portal Login</h1>
-<p class="sub">Secure access for Super Admins, business owners and staff.</p>
+<h1>Who is signing in?</h1>
+<p class="sub">Choose the right door — customer and business accounts are completely separate systems.</p>
 
-<form method="post" action="<?= e(url('/login')) ?>" autocomplete="on">
-    <?= csrf_field() ?>
-    <div class="form-row">
-        <label for="email">Email address</label>
-        <input id="email" type="email" name="email" value="<?= e(old('email')) ?>" required autofocus placeholder="you@business.com">
-    </div>
-    <div class="form-row">
-        <label for="password">Password</label>
-        <div style="position:relative;">
-            <input id="password" type="password" name="password" required placeholder="••••••••">
-            <button type="button" class="btn btn-sm btn-outline" data-toggle-password="#password" style="position:absolute;right:6px;top:5px;padding:4px 8px;font-size:11px;">Show</button>
+<div class="grid" style="gap:14px;margin:22px 0;">
+    <a class="card auth-choice" href="<?= e(url('/customer/login')) ?>">
+        <div class="auth-choice-icon"><?= icon('person') ?></div>
+        <div>
+            <strong>Customer</strong>
+            <p class="table-muted">Browse businesses, track your enquiries and requests. Sign in with Google or email — no approval needed.</p>
         </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Login to Portal <?= icon('send') ?></button>
-</form>
+        <span class="badge info">Self-service</span>
+    </a>
+    <a class="card auth-choice" href="<?= e(url('/business/login')) ?>">
+        <div class="auth-choice-icon"><?= icon('storefront') ?></div>
+        <div>
+            <strong>Business</strong>
+            <p class="table-muted">Owners and staff managing a business tenant: catalog, enquiries, subscription and website publishing.</p>
+        </div>
+        <span class="badge muted">Tenant access</span>
+    </a>
+</div>
 
 <div class="auth-links">
-    <span>New to the platform? <a href="<?= e(url('/register-business')) ?>">Register Business</a></span>
-    <span>Shopping for a business? <a href="<?= e(url('/customer/login')) ?>">Customer Login</a></span>
+    <span>New to the platform as a business? <a href="<?= e(url('/register-business')) ?>">Register Business</a></span>
+    <span>Just looking around? <a href="<?= e(url('/')) ?>">Browse the public directory</a></span>
     <?php if (!\App\Controllers\SetupController::superAdminExistsStatic()): ?>
-        <span><a href="<?= e(url('/setup')) ?>">First-time Super Admin setup →</a></span>
+        <span class="notice" style="width:100%;"><?= icon('build') ?> &nbsp;First run: no platform administrator exists yet. <a href="<?= e(url('/setup')) ?>">Create the initial Super Admin →</a></span>
     <?php endif; ?>
 </div>

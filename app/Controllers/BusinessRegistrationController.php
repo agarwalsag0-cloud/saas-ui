@@ -152,7 +152,7 @@ class BusinessRegistrationController extends Controller
         ActivityLogger::log('business_registered_publicly', 'business', $businessId, $businessId, ['owner_user_id' => $ownerId, 'selected_plan_id' => $selectedPlan['id'] ?? null]);
 
         Flash::success('Business registered successfully. Your login is created, but portal and website access remain locked until Super Admin approval and an active subscription with included features.');
-        $this->redirect('/login');
+        $this->redirect('/business/login');
     }
 
     private function publicPlans(): array

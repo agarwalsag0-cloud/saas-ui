@@ -22,4 +22,4 @@
     <button class="btn btn-primary" type="submit">Create Super Admin</button>
 </form>
 <p class="help-text">After this, new business owners are added from Super Admin or through public registration.</p>
-<div class="auth-links"><span>Already set up? <a href="<?= e(url('/login')) ?>">Portal login</a></span></div>
+<div class="auth-links"><span>Already set up? <a href="<?= e(url('/admin/login')) ?>">Admin sign-in</a></span></div>
